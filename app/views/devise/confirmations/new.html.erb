@@ -1,0 +1,47 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <h1><%= t(".resend_confirmation_instructions") %></h1>
+    </div>
+
+    </br>
+    </br>
+
+    <!-- Login Form -->
+    <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+      <%= f.error_notification %>
+      <%= f.full_error :confirmation_token %>
+
+      <div class="row w-70-centered" >
+        <div class="form-group">
+          <label for="email">
+            <%= t('home.email_address') %></label>
+          <%= f.input_field :email,
+                            required: false,
+                            autofocus: true,
+                            value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email),
+                            input_html: { autocomplete: "email" },
+                            class: "form-control field-with-errors fadeIn second",
+                            label: false %>
+        </div>
+      </div>
+
+      <div class="col-md-12 text-center mb-3">
+        <div class="form-group">
+          <%= f.button :submit, t(".resend_confirmation_instructions"), class: "fadeIn third" %>
+        </div>
+      </div>
+    <% end %>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <%= render "devise/shared/links" %>
+    </div>
+
+  </div>
+</div>
+
+<%= stylesheet_link_tag "styles/devise" %>

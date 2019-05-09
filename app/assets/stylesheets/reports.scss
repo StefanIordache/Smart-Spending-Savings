@@ -1,0 +1,42 @@
+// Place all the styles related to the Reports controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.rad-navigation {
+  position: absolute;
+  left: 200px;
+  right: 200px;
+  top: 100px;
+  height: 50px;
+  box-shadow: 0 0px 9px 4px rgba(0, 0, 0, 0.1), 0 -5px 2px 2px rgba(0, 0, 0, 0.1);
+  background: white;
+  z-index: 10000;
+}
+.rad-logo-container {
+  width: 400px;
+  text-align: left;
+  height: 50px;
+  float: left;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+.rad-logo {
+  text-decoration: none;
+  position: relative;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 15px;
+  font-size: 22px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #222533;
+  display: inline-block;
+}
+.rad-body-wrapper {
+  position: absolute;
+  left: 200px;
+  right:200px;
+  top: 150px;
+  width: auto;
+  height: 100vh;
+}

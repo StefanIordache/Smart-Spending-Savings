@@ -1,0 +1,131 @@
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'dashboard', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% end %>
+
+
+<section>
+  <header>
+    <nav class="rad-navigation">
+      <div class="rad-logo-container">
+        <a href="#" class="rad-logo">My dashboard</a>
+      </div>
+    </nav>
+  </header>
+</section>
+<aside>
+  <nav class="rad-sidebar">
+    <h2 class="title-white">Recent spendings</h2>
+    <table class="table-fill">
+      <thead>
+      <tr>
+        <th>Date</th>
+        <th>Sum</th>
+      </tr>
+      </thead>
+      <tbody class="table-hover">
+      <tr>
+        <td class="text-left">12.03.2019</td>
+        <td class="text-left"> 30,45 lei</td>
+      </tr>
+      <tr>
+        <td class="text-left">13.03.2019</td>
+        <td class="text-left">45,40 lei</td>
+      </tr>
+      <tr>
+        <td class="text-left">16.03.2019</td>
+        <td class="text-left">200 lei</td>
+      </tr>
+      <tr>
+        <td class="text-left">17.03.2019</td>
+        <td class="text-left">120,23 lei</td>
+      </tr>
+      <tr>
+        <td class="text-left">18.03.2019</td>
+        <td class="text-left">78 lei</td>
+      </tr>
+      <tr>
+        <td class="text-left">18.03.2019</td>
+        <td class="text-left">78 lei</td>
+      </tr>
+      <tr>
+        <td class="text-left">18.03.2019</td>
+        <td class="text-left">78 lei</td>
+      </tr>
+      <tr>
+        <td class="text-left">18.03.2019</td>
+        <td class="text-left">78 lei</td>
+      </tr>
+      <tr>
+        <td class="text-left">18.03.2019</td>
+        <td class="text-left">78 lei</td>
+      </tr>
+      <tr>
+        <td class="text-left">18.03.2019</td>
+        <td class="text-left">78 lei</td>
+      </tr>
+      </tbody>
+    </table>
+    <button class="btn  btn-md myButton" type="button" name="button">Show more >></button>
+  </nav>
+</aside>
+<main>
+  <section>
+    <div class="rad-body-wrapper" style='border-right-width:1px;border-right-style:solid;border-right-color:#2f4050'>
+      <div class="container-fluid">
+        <div class="row">
+          <span><h3 class='myH3'>Total for current month: 700 lei</h3></span>
+        </div>
+        <div class="row">
+          <!-- here-->
+          <div class="col-lg-6 col-md-6 col-xs-12">
+            <select style='margin-left:100px;width:200px;'>
+              <option value="select" selected>Select a month</option>
+              <option value="volvo">January</option>
+              <option value="saab">February</option>
+              <option value="audi">March</option>
+            </select>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Pie Chart</h3>
+              </div>
+              <div class="panel-body">
+                <%= image_tag("PieChart.png", alt: "Example Image") %>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-xs-12">
+            <select style='margin-left:100px;width:200px;'>
+              <option value="select" selected>Select a month</option>
+              <option value="volvo">January</option>
+              <option value="saab">February</option>
+              <option value="audi">March</option>
+            </select>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Bar Chart</h3>
+              </div>
+              <div class="panel-body">
+                <%= image_tag("barChart.jpg", alt: "Example Image") %>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class=" col-md-11" style='margin-left:50px;'>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Line Chart</h3>
+            </div>
+            <div class="panel-body">
+
+              <%= image_tag("lineChart.png", alt: "Example Image") %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

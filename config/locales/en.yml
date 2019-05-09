@@ -1,0 +1,61 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  home:
+    join: "Join us"
+    email_address: "Email Address"
+    register: "Register"
+    password: "Password"
+    password_confirmation: "Password Confirmation"
+    sign_up: "Sign up"
+    already_have_an_account: "Already have an account?"
+    create_your_profile: "Create your profile"
+    upload_expenses: "Upload Expenses"
+    manage_your_money: "Manage Your Money"
+    features: "Features"
+    works_on_everything: "Works on everything"
+    works_on_everything_text: "Do you own a table, a smartphone or a desktop? Don't worry about that. Our app is available for every type of device."
+    always_available: "Always available"
+    always_available_text: "Our services are always available so you can place all your expenses at any time, even on busy nights out."
+    international: "International"
+    international_text: "Even if you are from Europe, Asia or Antarctica you are able to use SSS on your language."
+    customizable: "Customizable"
+    customizable_text: "Customize your profile with different currencies and manage your money flow in a friendly way. We even give you charts."
+    subscribe_to_newsletter: "Subscribe to Newsletter"
+    subscribe: "Subscribe"
+    remember_me: "Remember me"
+    go_to_home_page: "Go to Home Page"
+    sign_in_with: "Sign in with "
+    log_in: "Log In"
+    new_here: "New here?"
+  general:
+    or: "or"

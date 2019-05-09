@@ -1,0 +1,138 @@
+<link rel="stylesheet" href="https://cdn.lineicons.com/1.0.0/LineIcons.min.css">
+<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css" />
+
+<div class="container-fluid bg">
+  <div class="container custom-container-welcome">
+    <div class="row">
+      <div class="col-md-8 ">
+        <div class="row">
+          <div class="col-sm-3 col-md-2 col-lg-2">
+            <i class="lni lni-enter" aria-hidden="true"></i>
+          </div>
+
+          <div class="col-sm-9 col-md-10 col-lg-10">
+            <h1 class="heading"><%= t('home.register') %></h1>
+          </div>
+        </div>
+
+        </br>
+        </br>
+
+        <div class="row">
+          <div class="col-sm-3 col-md-2 col-lg-2">
+            <i class="lni lni-user" aria-hidden="true"></i>
+          </div>
+
+          <div class="col-sm-9 col-md-10 col-lg-10">
+            <h1 class="heading"><%= t('home.create_your_profile') %></h1>
+          </div>
+        </div>
+
+        </br>
+        </br>
+
+        <div class="row">
+          <div class="col-sm-3 col-md-2 col-lg-2">
+            <i class="lni lni-cloud-upload" aria-hidden="true"></i>
+          </div>
+
+          <div class="col-sm-9 col-md-10 col-lg-10">
+            <h1 class="heading"><%= t('home.upload_expenses') %></h1>
+          </div>
+        </div>
+
+        </br>
+        </br>
+
+        <div class="row">
+          <div class="col-sm-3 col-md-2 col-lg-2">
+            <i class="lni lni-search" aria-hidden="true"></i>
+          </div>
+
+          <div class="col-sm-9 col-md-10 col-lg-10">
+            <h1 class="heading"><%= t('home.manage_your_money') %></h1>
+          </div>
+        </div>
+
+        </br>
+        </br>
+        </br>
+        </br>
+      </div>
+
+      <div class="col-md-4 custom-card-welcome">
+        <div class="card regform wow bounce animated" data-wow-delay="0.05s">
+          <div class="card-body regform">
+            <div class="myform form ">
+              <div class="logo mb-3">
+                <div class="col-md-12 text-center">
+                  <h1 class="sign"><%= t('home.join') %></h1>
+                </div>
+              </div>
+
+              <%= simple_form_for(:user, :url => registration_path(:user), :html => { :class => 'custom-form-welcome'}) do |f| %>
+                <%= f.error_notification %>
+                <div class="form-group">
+                  <label for="email"><%= t('home.email_address') %></label>
+                  <%= f.input_field :email,
+                                    required: true,
+                                    autofocus: true,
+                                    input_html: { autocomplete: "email" },
+                                    class: "form-control field-with-errors",
+                                    label: false %>
+                </div>
+                <div class="form-group">
+                  <label for="password"><%= t('home.password') %></label>
+                  <%= f.input_field :password,
+                                    required: true,
+                                    hint: (t('devise.shared.minimum_password_length', count: @minimum_password_length) if @minimum_password_length),
+                                    input_html: { autocomplete: "new-password" },
+                                    class: "form-control field-with-errors",
+                                    label: false %>
+                </div>
+                <div class="form-group">
+                  <label for="email"><%= t('home.password_confirmation') %></label>
+                  <%= f.input_field :password_confirmation,
+                                    required: true,
+                                    input_html: { autocomplete: "new-password" },
+                                    class: "form-control field-with-errors",
+                                    label: false %>
+                </div>
+                <div class="col-md-12 text-center mb-3">
+                  <div class="form-group">
+                    <%= f.button :submit, t('home.sign_up'), class: "btn btn-block mybtn btn-primary tx-tfm" %>
+                  </div>
+                </div>
+              <% end %>
+
+              <div class="col-md-12 ">
+                <div class="form-group">
+                  <p class="text-center">
+                    <%= link_to t('home.already_have_an_account'), controller: "devise/sessions", action: "new" %>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+    $("#signup").click(function () {
+        $("#first").fadeOut("fast", function () {
+            $("#second").fadeIn("fast");
+        });
+    });
+
+    $("#signin").click(function () {
+        $("#second").fadeOut("fast", function () {
+            $("#first").fadeIn("fast");
+        });
+    });
+
+</script>

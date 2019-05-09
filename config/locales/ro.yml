@@ -1,0 +1,32 @@
+ro:
+  home:
+    join: "Intră şi tu"
+    email_address: "Adresa de email"
+    register: "Inregistreaza-te"
+    password: "Parola"
+    password_confirmation: "Confirmarea parolei"
+    sign_up: "Inregistrare"
+    already_have_an_account: "Ai deja un cont inregistrat?"
+    create_your_profile: "Creaza-ti profilul"
+    upload_expenses: "Incarca cheltuielile tale"
+    manage_your_money: "Administreaza-ti finantele"
+    features: "Cu ce ne laudam"
+    works_on_everything: "Adaptabilitate"
+    works_on_everything_text: "Detii o tableta, un telefon inteligent sau un sistem desktop? Nu iti mai face griji! Aplciatia noastra este disponibila pe orice dispozitiv."
+    always_available: "Disponibilitate"
+    always_available_text: "Serviciile pe care vi le oferim sunt disponibile in permanenta. Iti poti adauga cheluielile la orice ora, chiar si in timpul noptilor albe petrecute in centrul orasului."
+    international: "International"
+    international_text: "Chiar daca esti din Europa, Asia sau Antarctica poti folosi aplicatia SSS in limba ta natala."
+    customizable: "Personalizare"
+    customizable_text: "Profilul tau poate fi adaptat pentru diferite valute si iti poti administra finantele intr-un mod prietenos. Iti oferim chiar si grafice."
+    subscribe_to_newsletter: "Aboneaza-te la noutati"
+    subscribe: "Aboneaza-te"
+    remember_me: "Retine"
+    go_to_home_page: "Mergi la pagina principala"
+    sign_in_with: "Autentifica-te cu "
+    log_in: "Autentificare"
+    new_here: "Esti nou?"
+  general:
+    or: "sau"
+
+

@@ -1,0 +1,174 @@
+<div class="jumbotron jumbotron-title">
+  <h2 class="display-4">Your Expenses</h2>
+</div>
+
+
+<div class="table-container">
+  </br>
+
+  <div class="text-center">
+    <%= link_to new_expense_path(@expense), class: "btn btn-sm btn-info" do%>
+      <i class="fas fa-plus-circle"></i> Add New Expense
+    <% end %>
+  </div>
+
+  <table id="expenses_table" class="container">
+    <thead>
+    <tr>
+      <th><h1>Expense Title</h1></th>
+      <th><h1>Amount</h1></th>
+      <th><h1>Date</h1></th>
+      <th><h1>Description</h1></th>
+      <th><h1>Actions</h1></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @expenses.each do |expense| %>
+      <tr>
+        <td><%= link_to expense.title, expense_path(expense) %></td>
+        <td><%= expense.amount.to_s + ' ' + expense.currency.to_s.humanize.upcase %></td>
+        <td><%= expense.expense_date %></td>
+        <td><%= expense.description %></td>
+        <td>
+
+          <%= link_to edit_expense_path(expense), class: "btn btn-sm btn-info" do%>
+            <i class="fas fa-edit"></i>
+          <% end %>
+
+          <%= link_to expense_path(expense), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
+
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        $('#expenses_table').DataTable();
+    });
+
+</script>
+
+<style>
+  @charset "UTF-8";
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+  .table-container {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.42em;
+    color:#A7A1AE;
+    background-color:#1F2739;
+    padding-bottom: 30px;
+  }
+
+  .table-container h1 {
+    font-size:3em;
+    font-weight: 300;
+    line-height:1em;
+    text-align: center;
+    color: #4DC3FA;
+  }
+
+  .table-container h2 {
+    font-size:1em;
+    font-weight: 300;
+    text-align: center;
+    display: block;
+    line-height:1em;
+    padding-bottom: 2em;
+    color: #FB667A;
+  }
+
+  .table-container h2 a {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #FB667A;
+    text-decoration: none;
+  }
+
+  .table-container .blue { color: #185875; }
+  .table-container .yellow { color: #FFF842; }
+
+  .table-container .container th h1 {
+    font-weight: bold;
+    font-size: 1em;
+    text-align: left;
+    color: #185875;
+  }
+
+  .table-container .container td {
+    font-weight: normal;
+    font-size: 1em;
+    -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+    -moz-box-shadow: 0 2px 2px -2px #0E1119;
+    box-shadow: 0 2px 2px -2px #0E1119;
+  }
+
+  .table-container .container {
+    text-align: left;
+    overflow: hidden;
+    width: 80%;
+    margin: 0 auto;
+    display: table;
+    padding: 0 0 8em 0;
+  }
+
+  .table-container .container td, .container th {
+    padding-bottom: 2%;
+    padding-top: 2%;
+    padding-left:2%;
+  }
+
+  /* Background-color of the odd rows */
+  .table-container .container tr:nth-child(odd) {
+    background-color: #323C50;
+  }
+
+  /* Background-color of the even rows */
+  .table-container .container tr:nth-child(even) {
+    background-color: #2C3446;
+  }
+
+  .table-container .container th {
+    background-color: #1F2739;
+  }
+
+  .table-container .container td:first-child { color: #FB667A; }
+
+  .table-container .container tr:hover {
+    background-color: #464A52;
+    -webkit-box-shadow: 0 6px 6px -6px #0E1119;
+    -moz-box-shadow: 0 6px 6px -6px #0E1119;
+    box-shadow: 0 6px 6px -6px #0E1119;
+  }
+
+  .table-container .container td:hover {
+    background-color: #FFF842;
+    color: #403E10;
+    font-weight: bold;
+
+    box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+    transform: translate3d(6px, -6px, 0);
+
+    transition-delay: 0s;
+    transition-duration: 0.4s;
+    transition-property: all;
+    transition-timing-function: line;
+  }
+
+  @media (max-width: 800px) {
+    .table-container .container td:nth-child(4),
+    .table-container .container th:nth-child(4) { display: none; }
+  }
+
+  .jumbotron {
+    margin-bottom: 0 !important;
+  }
+</style>

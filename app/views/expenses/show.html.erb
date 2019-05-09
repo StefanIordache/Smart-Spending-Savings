@@ -1,0 +1,133 @@
+<div class="jumbotron jumbotron-title">
+  <h2 class="display-4">View Expense</h2>
+</div>
+
+</br>
+</br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
+
+
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= @expense.title %></h3>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class=" col-md-12 col-lg-12 ">
+              <table class="table table-user-information">
+                <tbody>
+                <tr>
+                  <td>Amount:</td>
+                  <td><%= @expense.amount.to_s + ' ' + @expense.currency.to_s.humanize.upcase %></td>
+                </tr>
+                <tr>
+                  <td>Expense date:</td>
+                  <td><%= @expense.expense_date %></td>
+                </tr>
+                <tr>
+                  <td>Description:</td>
+                  <td><%= @expense.description %></td>
+                </tr>
+
+                </tbody>
+              </table>
+
+              <%= link_to "Back to My Expenses", action: "index", class: "btn btn-primary" %>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <%= link_to edit_expense_path(@expense), class: "btn btn-sm btn-info" do%>
+            <i class="fas fa-edit"></i>
+          <% end %>
+          <span class="pull-right">
+            <%= link_to expense_path(@expense), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" do %>
+                  <i class="fas fa-trash-alt"></i>
+            <% end %>
+          </span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+
+    .user-row {
+        margin-bottom: 14px;
+    }
+
+    .user-row:last-child {
+        margin-bottom: 0;
+    }
+
+    .dropdown-user {
+        margin: 13px 0;
+        padding: 5px;
+        height: 100%;
+    }
+
+    .dropdown-user:hover {
+        cursor: pointer;
+    }
+
+    .table-user-information > tbody > tr {
+        border-top: 1px solid rgb(221, 221, 221);
+    }
+
+    .table-user-information > tbody > tr:first-child {
+        border-top: 0;
+    }
+
+
+    .table-user-information > tbody > tr > td {
+        border-top: 0;
+    }
+    .toppad {
+        margin-top:20px;
+    }
+
+</style>
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        var panels = $('.user-infos');
+        var panelsButton = $('.dropdown-user');
+        panels.hide();
+
+        //Click dropdown
+        panelsButton.click(function() {
+            //get data-for attribute
+            var dataFor = $(this).attr('data-for');
+            var idFor = $(dataFor);
+
+            //current button
+            var currentButton = $(this);
+            idFor.slideToggle(400, function() {
+                //Completed slidetoggle
+                if(idFor.is(':visible'))
+                {
+                    currentButton.html('<i class="glyphicon glyphicon-chevron-up text-muted"></i>');
+                }
+                else
+                {
+                    currentButton.html('<i class="glyphicon glyphicon-chevron-down text-muted"></i>');
+                }
+            })
+        });
+
+
+        $('[data-toggle="tooltip"]').tooltip();
+
+        $('button').click(function(e) {
+            e.preventDefault();
+            alert("This is a demo.\n :-)");
+        });
+    });
+
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SSS</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= yield :stylesheets %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= yield :scripts %>
+
+  </head>
+
+  <body>
+    <div class="body" id="wrapper">
+
+      <div id="header">
+      <%= render 'layouts/header' %>
+      </div>
+
+
+      <div id="content">
+        <%# flash.each do |name, msg| -%>
+          <%#= content_tag(:div,  class: "alert fade in alert-#{name}") do %>
+            <%#= msg %>
+<!--            <button class="close" data-dismiss="alert">×</button>-->
+          <%# end %>
+        <%# end -%>
+        <%= yield %>
+      </div>
+      
+      <%= render 'layouts/footer' %>
+
+    </div>
+  </body>
+</html>
