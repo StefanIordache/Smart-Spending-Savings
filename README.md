@@ -1,4 +1,4 @@
-# README - Smart Spending & Saving
+# README - Smart Spending & Savings
 
 Those are the necessary steps to get the application up and running.
 
@@ -12,7 +12,8 @@ Those are the necessary steps to get the application up and running.
     * PostgreSQL 10 or 11
 
 * Configuration
-    1. npm install (this is optional as we serve this command when we run "rails s")
+    1. bundle install
+    2. npm install (this is optional as we serve this command when we run "rails s")
 
 * Database creation
     1. rails db:create
