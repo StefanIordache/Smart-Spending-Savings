@@ -1,0 +1,73 @@
+@import "colors-map";
+// BOOTSTRAP - START
+// Core variables and mixins
+@import "styles/fuse/_scss/vendor/bootstrap/functions";
+@import "variables";
+@import "styles/fuse/_scss/vendor/bootstrap/mixins";
+@import "styles/fuse/_scss/vendor/bootstrap/root";
+@import "styles/fuse/_scss/vendor/bootstrap/print";
+@import "mdc/mdc-theme/functions";
+@import "styles/fuse/_scss/vendor/bootstrap/reboot";
+@import "styles/fuse/_scss/vendor/bootstrap/type";
+@import "styles/fuse/_scss/vendor/bootstrap/images";
+@import "styles/fuse/_scss/vendor/bootstrap/code";
+@import "styles/fuse/_scss/vendor/bootstrap/grid";
+@import "styles/fuse/_scss/vendor/bootstrap/tables";
+@import "styles/fuse/_scss/vendor/bootstrap/forms";
+@import "styles/fuse/_scss/vendor/bootstrap/transitions";
+@import "styles/fuse/_scss/vendor/bootstrap/dropdown";
+@import "styles/fuse/_scss/vendor/bootstrap/button-group";
+@import "styles/fuse/_scss/vendor/bootstrap/input-group";
+@import "styles/fuse/_scss/vendor/bootstrap/custom-forms";
+@import "styles/fuse/_scss/vendor/bootstrap/nav";
+@import "styles/fuse/_scss/vendor/bootstrap/navbar";
+@import "styles/fuse/_scss/vendor/bootstrap/card";
+@import "styles/fuse/_scss/vendor/bootstrap/breadcrumb";
+@import "styles/fuse/_scss/vendor/bootstrap/pagination";
+@import "styles/fuse/_scss/vendor/bootstrap/badge";
+@import "styles/fuse/_scss/vendor/bootstrap/jumbotron";
+@import "styles/fuse/_scss/vendor/bootstrap/alert";
+@import "styles/fuse/_scss/vendor/bootstrap/progress";
+@import "styles/fuse/_scss/vendor/bootstrap/media";
+@import "styles/fuse/_scss/vendor/bootstrap/list-group";
+@import "styles/fuse/_scss/vendor/bootstrap/close";
+@import "styles/fuse/_scss/vendor/bootstrap/modal";
+@import "styles/fuse/_scss/vendor/bootstrap/tooltip";
+@import "styles/fuse/_scss/vendor/bootstrap/popover";
+@import "styles/fuse/_scss/vendor/bootstrap/carousel";
+@import "styles/fuse/_scss/vendor/bootstrap/utilities";
+// BOOTSTRAP - END
+// Material Design Web Components
+@import "mdc/animation/mdc-animation";
+@import "mdc/elevation/mdc-elevation";
+// Fuse Material Design
+@import "mixins";
+@import "helpers";
+@import "layout";
+@import "typography";
+@import "ripple";
+@import "icons";
+@import "page-layouts";
+@import "dividers";
+@import "avatar";
+// Bootstrap overrides
+@import "type";
+@import "buttons";
+@import "button-group";
+@import "forms";
+@import "custom-forms";
+@import "dropdown";
+@import "pagination";
+@import "badge";
+@import "alert";
+@import "breadcrumb";
+@import "card";
+@import "list-group";
+@import "progress";
+@import "snackbar";
+@import "nav";
+@import "navbar";
+@import "input-group";
+@import "jumbotron";
+@import "tables";
+@import "colors";

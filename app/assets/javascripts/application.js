@@ -14,10 +14,10 @@
 //= require activestorage
 //= require turbolinks
 //= require jquery3
-//= require popper
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap
+//= require bootstrap/dist/js/bootstrap.bundle.js
+//= require popper
 //= require chartkick
 //= requires cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js
 

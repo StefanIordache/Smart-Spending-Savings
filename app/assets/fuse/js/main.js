@@ -1,5 +1,6 @@
 (function ()
 {
+    console.log()
     $('document').ready(function ()
     {
         // Prevent default for empty links
@@ -104,8 +105,8 @@
     /**
      *     PNotify default styling.
      */
-    PNotify.defaults.styling = 'material';
-    PNotify.defaults.icons = 'material';
+    // PNotify.defaults.styling = 'material';
+    // PNotify.defaults.icons = 'material';
 
     /**
      * Watching media step changes
@@ -117,3 +118,4 @@
      });*/
 
 })();
+
