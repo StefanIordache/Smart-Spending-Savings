@@ -18,6 +18,7 @@
 //= require jquery_ujs
 //= require bootstrap/dist/js/bootstrap.bundle.js
 //= require popper
+//= require Chart.bundle
 //= require chartkick
 //= requires cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js
 

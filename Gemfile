@@ -87,7 +87,7 @@ gem 'ajax-datatables-rails'
 gem 'jquery-datatables'
 
 # charts
-gem "chartkick"
+gem 'chartkick'
 gem 'groupdate'
 
 gem 'therubyracer'
