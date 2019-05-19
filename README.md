@@ -3,7 +3,7 @@
 Those are the necessary steps to get the application up and running.
 
 * Package version
-    * Ruby - 2.5.2
+    * Ruby - 2.6.2
     * Rails - 5.2.2
     * Node.js and npm
 

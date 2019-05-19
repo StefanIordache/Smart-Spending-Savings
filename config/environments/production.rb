@@ -91,4 +91,25 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.assets.precompile << Proc.new { |path|
+    if path =~ /\.(css|js|scss|png|jpg)\z/
+      @assets ||= Rails.application.assets || Sprockets::Railtie.build_environment(Rails.application)
+      full_path = @assets.resolve(path)
+      app_assets_path = Rails.root.join('app', 'assets').to_path
+      fuse_scss_path = Rails.root.join('app', 'assets', 'fuse', '_scss').to_path
+      fuse_scss_main_path = Rails.root.join('app', 'assets', 'fuse', '_scss', 'main.scss').to_path
+      if full_path.starts_with? fuse_scss_main_path
+        puts 'including fuse scss main at path: ' + full_path
+        false
+      elsif full_path.starts_with? app_assets_path and not full_path.starts_with? fuse_scss_path
+        puts 'including asset: ' + full_path
+        true
+      else
+        false
+      end
+    else
+      false
+    end
+  }
 end
