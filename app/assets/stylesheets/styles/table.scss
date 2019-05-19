@@ -5,25 +5,24 @@
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   line-height: 1.42em;
-  color:#A7A1AE;
-  background-color:#1F2739;
-  padding-bottom: 30px;
+  color: #A7A1AE;
+  padding-bottom: 10px;
 }
 
 .custom-table-container h1 {
-  font-size:3em;
+  font-size: 3em;
   font-weight: 300;
-  line-height:1em;
+  line-height: 1em;
   text-align: center;
   color: #4DC3FA;
 }
 
 .custom-table-container h2 {
-  font-size:1em;
+  font-size: 1em;
   font-weight: 300;
   text-align: center;
   display: block;
-  line-height:1em;
+  line-height: 1em;
   padding-bottom: 2em;
   color: #FB667A;
 }
@@ -35,8 +34,13 @@
   text-decoration: none;
 }
 
-.custom-table-container .blue { color: #185875; }
-.custom-table-container .yellow { color: #FFF842; }
+.custom-table-container .blue {
+  color: #185875;
+}
+
+.custom-table-container .yellow {
+  color: #FFF842;
+}
 
 .custom-table-container .container th h1 {
   font-weight: bold;
@@ -65,7 +69,7 @@
 .custom-table-container .container td, .container th {
   padding-bottom: 2%;
   padding-top: 2%;
-  padding-left:2%;
+  padding-left: 2%;
 }
 
 /* Background-color of the odd rows */
@@ -82,7 +86,9 @@
   background-color: #1F2739;
 }
 
-.custom-table-container .container td:first-child { color: #FB667A; }
+.custom-table-container .container td:first-child {
+  color: #FB667A;
+}
 
 .custom-table-container .container tr:hover {
   background-color: #464A52;
@@ -107,9 +113,48 @@
 
 @media (max-width: 800px) {
   .custom-table-container .container td:nth-child(4),
-  .custom-table-container .container th:nth-child(4) { display: none; }
+  .custom-table-container .container th:nth-child(4) {
+    display: none;
+  }
 }
 
 .jumbotron {
   margin-bottom: 0 !important;
+}
+
+.no-expenses-msg {
+  display: flex;
+  justify-content: center;
+}
+
+.no-expenses-msg #warning {
+  width: 42%;
+  margin-top: 15px;
+}
+
+.no-expenses-msg #warning .warningContent {
+  color: #008679;
+  text-shadow: -1px -1px black;
+}
+
+.no-expenses-msg #warning .warningContent span {
+  font-size: 90px;
+  font-weight: bold;
+  line-height: 90px;
+  display: block;
+  float: left;
+  margin-right: 3px;
+}
+
+.no-expenses-msg #warning .warningContent .wHeading {
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 60px;
+  margin: 0;
+  letter-spacing: -2px;
+}
+
+.no-expenses-msg #warning .warningContent p {
+  font-size: 16px;
+  line-height: 16px;
 }

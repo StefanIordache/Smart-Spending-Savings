@@ -20,7 +20,7 @@
             </br>
 
             <div class="text-center">
-              <%= link_to new_report_path(@report), class: "btn btn-sm btn-info" do %>
+              <%= link_to new_report_path(@report), class: "btn btn-info" do %>
                 <i class="fas fa-plus-circle"></i> Create New Report
               <% end %>
             </div>
@@ -46,11 +46,11 @@
                     <td><%= report.description %></td>
                     <td>
 
-                      <%= link_to edit_report_path(report), class: "btn btn-sm btn-info" do %>
+                      <%= link_to edit_report_path(report), class: "btn btn-info" do %>
                         <i class="fas fa-edit"></i>
                       <% end %>
 
-                      <%= link_to report_path(report), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-sm btn-danger" do %>
+                      <%= link_to report_path(report), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" do %>
                         <i class="fas fa-trash-alt"></i>
                       <% end %>
 
@@ -64,7 +64,15 @@
 
             <% else  %>
 
-              DE ADAUGAT UN MESAJ FRUMOS PENTRU TABELELE GOALE
+              <div class="p-3 no-expenses-msg">
+                <section id="warning">
+                  <section class="warningContent">
+                    <span>!</span>
+                    <h5 class="wHeading">We are sorry</h5>
+                    <p>You don't have any reports on our platform!</p>
+                  </section>
+                </section>
+              </div>
 
             <% end %>
           </div>

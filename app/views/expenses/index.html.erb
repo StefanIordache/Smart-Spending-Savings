@@ -21,7 +21,7 @@
             </br>
 
             <div class="text-center">
-              <%= link_to new_expense_path(@expense), class: "btn btn-sm btn-info" do %>
+              <%= link_to new_expense_path(@expense), class: "btn btn-info" do %>
                 <i class="fas fa-plus-circle"></i> Add New Expense
               <% end %>
             </div>
@@ -46,7 +46,7 @@
                     <td><%= expense.description %></td>
                     <td>
 
-                      <%= link_to edit_expense_path(expense), class: "btn btn-sm btn-info" do %>
+                      <%= link_to edit_expense_path(expense), class: "btn btn-info" do %>
                         <i class="fas fa-edit"></i>
                       <% end %>
 
@@ -60,7 +60,15 @@
                 </tbody>
               </table>
             <% else %>
-              DE ADAUGAT UN MESAJ FRUMOS PENTRU TABELELE VIDE
+              <div class="p-3 no-expenses-msg">
+                <section id="warning">
+                  <section class="warningContent">
+                    <span>!</span>
+                    <h5 class="wHeading">We are sorry</h5>
+                    <p>You don't have any expenses registered on our platform!</p>
+                  </section>
+                </section>
+              </div>
 
             <% end %>
           </div>
