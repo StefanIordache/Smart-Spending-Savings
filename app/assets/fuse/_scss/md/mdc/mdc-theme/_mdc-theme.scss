@@ -14,7 +14,7 @@
 // limitations under the License.
 //
 
-@import "./mixins";
+@import "mixins";
 
 :root {
   @each $style in map-keys($mdc-theme-property-values) {

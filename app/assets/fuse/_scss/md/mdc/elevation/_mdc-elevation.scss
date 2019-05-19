@@ -13,16 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-@import "./variables";
+@import "mixins";
 
-@mixin mdc-animation-linear-out-slow-in {
-    animation-timing-function: $mdc-animation-linear-out-slow-in-timing-function;
+@for $z-value from 0 through 24 {
+    .md-elevation-#{$z-value} {
+        @include mdc-elevation($z-value);
+    }
 }
 
-@mixin mdc-animation-fast-out-slow-in {
-    animation-timing-function: $mdc-animation-fast-out-slow-in-timing-function;
-}
-
-@mixin mdc-animation-fast-out-linear-in {
-    animation-timing-function: $mdc-animation-fast-out-linear-in-timing-function;
+.mdc-elevation-transition {
+    @include mdc-elevation-transition;
 }

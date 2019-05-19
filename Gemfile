@@ -89,3 +89,5 @@ gem 'jquery-datatables'
 # charts
 gem "chartkick"
 gem 'groupdate'
+
+gem 'therubyracer'
