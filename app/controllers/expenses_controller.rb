@@ -9,11 +9,19 @@ class ExpensesController < ApplicationController
 
   def show
     @expense = Expense.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def edit
     @button_text = "Update"
     @expense = Expense.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def update
@@ -29,6 +37,10 @@ class ExpensesController < ApplicationController
   def new
     @button_text = "Create"
     @expense = Expense.new
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create

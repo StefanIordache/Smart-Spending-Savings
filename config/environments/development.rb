@@ -62,7 +62,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = {host: 'localhost', port: 3000}
 
   config.assets.precompile << Proc.new { |path|
-    if path =~ /\.(css|js|scss|png|jpg)\z/
+    if path =~ /\.(css|js|scss|png|jpg|woff|ttf)\z/
       @assets ||= Rails.application.assets || Sprockets::Railtie.build_environment(Rails.application)
       full_path = @assets.resolve(path)
       app_assets_path = Rails.root.join('app', 'assets').to_path

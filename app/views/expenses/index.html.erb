@@ -21,10 +21,7 @@
             </br>
 
             <div class="text-center">
-              <%= link_to new_expense_path(@expense), class: "btn btn-info" do %>
-<!--  Astea trebuie puse pt a deschide modalul de la finalul fisierului-->
-<!--  , "data-toggle" => "modal",-->
-<!--  , "data-target" => "#RaportModal"-->
+              <%= link_to new_expense_path(@expense), {:remote => true, 'data-toggle' => "modal", 'data-target' => '#modal-window', class: "btn btn-info" } do %>
 
                 <i class="fas fa-plus-circle"></i> Add New Expense
               <% end %>
@@ -44,13 +41,13 @@
                 <tbody>
                 <% @expenses.each do |expense| %>
                   <tr>
-                    <td><%= link_to expense.title, expense_path(expense) %></td>
+                    <td><%= link_to expense.title, expense_path(expense), {:remote => true, 'data-toggle' => "modal", 'data-target' => '#modal-window'} %></td>
                     <td><%= expense.amount.to_s + ' ' + expense.currency.to_s.humanize.upcase %></td>
                     <td><%= expense.expense_date %></td>
                     <td><%= expense.description %></td>
                     <td>
 
-                      <%= link_to edit_expense_path(expense), class: "btn btn-info" do %>
+                      <%= link_to edit_expense_path(expense), {:remote => true, 'data-toggle' => "modal", 'data-target' => '#modal-window', class: "btn btn-info" } do %>
                         <i class="fas fa-edit"></i>
                       <% end %>
 
@@ -83,74 +80,23 @@
     </div>
 
   </div>
-  <div aria-hidden="true"
-       aria-labelledby="RaportModalLabel"
-       class="modal fade"
-       id="RaportModal"
-       role="dialog"
-       tabindex="-1">
-    <div class="modal-dialog modal-lg"
-         role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="RaportLabel">
-            Raport
-          </h5>
-          <button type="button"
-                  class="close"
-                  data-dismiss="modal"
-                  aria-label="Cancel">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="jumbotron jumbotron-title">
-            <h2 class="display-4">Add New Expense</h2>
-          </div>
 
-          </br>
-          </br>
-          <div class="container">
-            <div class="row">
-              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
-<!--                Formularul nu poate fi randat pt ca are parametrul ala @expense in el-->
-<!--                Propun sa inserezi formularul gol-->
-<!--                => Pt add ramane gol si il completam noi-->
-<!--                => Pt edit facem un ajax catre o ruta care ne intorce obiectul cu care noi dupa populam inputurile-->
-<!--                => Pt show putem sa facem ca mai sus + inputurile nu mai sunt editabile-->
-                <%#= render 'form' %>
-              </div>
-            </div>
-          </div>
-
-          </br>
-          </br>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button"
-                  class="btn btn-outline-danger"
-                  data-dismiss="modal">
-            Cancel
-          </button>
-          <button type="button"
-                  class="btn btn-outline-success"
-                  id="confirmRaport">
-            Save
-          </button>
-        </div>
-      </div>
+  <div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content"></div>
     </div>
   </div>
+
+
 </main>
 
 
 <script type="text/javascript">
 
     <% if @expenses.length > 0 %>
-    $(document).ready(function () {
-        $('#expenses_table').DataTable();
-    });
+      $(document).ready(function () {
+          $('#expenses_table').DataTable();
+      });
     <% end %>
 
 </script>
