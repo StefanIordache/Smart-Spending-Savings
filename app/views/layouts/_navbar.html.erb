@@ -14,9 +14,7 @@
 
         <div class="shortcuts-wrapper row no-gutters align-items-center px-0 px-sm-2">
 
-
         </div>
-
 
       </div>
     </div>
@@ -37,44 +35,39 @@
 
           <div class="dropdown-menu" aria-labelledby="dropdownUserMenu">
 
-            <a class="dropdown-item" href="#">
-              <div class="row no-gutters align-items-center flex-nowrap">
-                <i class="icon-account"></i>
-                <span class="px-3">My Profile</span>
-              </div>
-            </a>
+            <!--            <a class="dropdown-item" href="#">
+                          <div class="row no-gutters align-items-center flex-nowrap">
+                            <i class="icon-account"></i>
+                            <span class="px-3">My Profile</span>
+                          </div>
+                        </a>
 
-            <a class="dropdown-item" href="#">
-              <div class="row no-gutters align-items-center flex-nowrap">
-                <i class="icon-email"></i>
-                <span class="px-3">Inbox</span>
-              </div>
-            </a>
+                        <a class="dropdown-item" href="#">
+                          <div class="row no-gutters align-items-center flex-nowrap">
+                            <i class="icon-email"></i>
+                            <span class="px-3">Inbox</span>
+                          </div>
+                        </a>
 
-            <a class="dropdown-item" href="#">
-              <div class="row no-gutters align-items-center flex-nowrap">
-                <i class="status text-green icon-checkbox-marked-circle"></i>
-                <span class="px-3">Online</span>
-              </div>
-            </a>
+                        <a class="dropdown-item" href="#">
+                          <div class="row no-gutters align-items-center flex-nowrap">
+                            <i class="status text-green icon-checkbox-marked-circle"></i>
+                            <span class="px-3">Online</span>
+                          </div>
+                        </a>-->
 
-            <div class="dropdown-divider"></div>
+            <!--            <div class="dropdown-divider"></div>-->
 
-            <a class="dropdown-item" href="#">
+            <%= link_to destroy_user_session_path, method: :delete, :class => 'dropdown-item' do %>
               <div class="row no-gutters align-items-center flex-nowrap">
                 <i class="icon-logout"></i>
                 <span class="px-3">Logout</span>
               </div>
-            </a>
+            <% end %>
+
 
           </div>
         </div>
-
-        <div class="toolbar-separator"></div>
-
-        <button type="button" class="search-button btn btn-icon">
-          <i class="icon icon-magnify"></i>
-        </button>
 
         <div class="toolbar-separator"></div>
 
@@ -98,17 +91,11 @@
 
             <a class="dropdown-item" href="#">
               <div class="row no-gutters align-items-center flex-nowrap">
-                <img class="flag" src="../assets/images/flags/es.png">
-                <span class="px-3">Spanish</span>
+                <img class="flag" src="../assets/images/flags/ro.png">
+                <span class="px-3">Romanian</span>
               </div>
             </a>
 
-            <a class="dropdown-item" href="#">
-              <div class="row no-gutters align-items-center flex-nowrap">
-                <img class="flag" src="../assets/images/flags/tr.png">
-                <span class="px-3">Turkish</span>
-              </div>
-            </a>
           </div>
         </div>
 
