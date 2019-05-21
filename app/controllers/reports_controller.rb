@@ -2,27 +2,29 @@ class ReportsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-
     if current_user
       @reports = Report.where(user_id: current_user.id)
     end
   end
 
   def show
-
     @report = Report.includes(:expenses).find(params[:id])
-
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def edit
-
     @button_text = "Update"
     @report = Report.find(params[:id])
-
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def update
-
     @report = Report.find(params[:id])
 
     if @report.update_attributes(expense_params)
@@ -30,14 +32,15 @@ class ReportsController < ApplicationController
     else
       render 'edit'
     end
-
   end
 
   def new
-
     @button_text = "Create"
     @report = Report.new
-
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create

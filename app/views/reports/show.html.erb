@@ -7,9 +7,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
-
-
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 toppad">
       <div class="panel panel-info">
         <div class="panel-heading">
           <h3 class="panel-title"><%= @report.title %></h3>
@@ -44,11 +42,11 @@
           </div>
         </div>
         <div class="panel-footer">
-          <%= link_to edit_report_path(@report), class: "btn btn-sm btn-info" do%>
+          <%= link_to edit_report_path(@report), class: "btn btn-sm btn-info" do %>
             <i class="fas fa-edit"></i>
           <% end %>
           <span class="pull-right">
-            <%= link_to report_path(@report), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" do %>
+            <%= link_to report_path(@report), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-sm btn-danger" do %>
                   <i class="fas fa-trash-alt"></i>
             <% end %>
           </span>
@@ -59,16 +57,16 @@
   </div>
 </div>
 <div>
-<h3>Pie chart</h3>
-<%= pie_chart @report.expenses.group(:currency).count %>
+  <h3>Pie chart</h3>
+  <%= pie_chart @report.expenses.group(:currency).count %>
 </div>
 <div>
-<h3>Bar chart</h3>
-<%= bar_chart @report.expenses.group(:amount).count %>
+  <h3>Bar chart</h3>
+  <%= bar_chart @report.expenses.group(:amount).count %>
 </div>
 <div>
-<h3>Line chart</h3>
-<%= line_chart @report.expenses.group_by_day(:expense_date, format: "%B %d, %Y").count, discrete: true %>
+  <h3>Line chart</h3>
+  <%= line_chart @report.expenses.group_by_day(:expense_date, format: "%B %d, %Y").count, discrete: true %>
 </div>
 
 <div class="jumbotron jumbotron-title">
@@ -98,7 +96,7 @@
         <td>
           <%= link_to :action => "remove_expense_from_report",
                       :report_id => @report.id, :expense_id => expense.id,
-                      data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" do %>
+                      data: {confirm: 'Are you sure?'}, class: "btn btn-sm btn-danger" do %>
             <i class="fas fa-trash-alt"></i>
           <% end %>
         </td>
@@ -111,7 +109,7 @@
 
 <script type="text/javascript">
 
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('#expenses_table').DataTable();
     });
 
@@ -148,8 +146,9 @@
   .table-user-information > tbody > tr > td {
     border-top: 0;
   }
+
   .toppad {
-    margin-top:20px;
+    margin-top: 20px;
   }
 
   @charset "UTF-8";
@@ -159,25 +158,25 @@
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     line-height: 1.42em;
-    color:#A7A1AE;
-    background-color:#1F2739;
+    color: #A7A1AE;
+    background-color: #1F2739;
     padding-bottom: 30px;
   }
 
   .table-container h1 {
-    font-size:3em;
+    font-size: 3em;
     font-weight: 300;
-    line-height:1em;
+    line-height: 1em;
     text-align: center;
     color: #4DC3FA;
   }
 
   .table-container h2 {
-    font-size:1em;
+    font-size: 1em;
     font-weight: 300;
     text-align: center;
     display: block;
-    line-height:1em;
+    line-height: 1em;
     padding-bottom: 2em;
     color: #FB667A;
   }
@@ -189,8 +188,13 @@
     text-decoration: none;
   }
 
-  .table-container .blue { color: #185875; }
-  .table-container .yellow { color: #FFF842; }
+  .table-container .blue {
+    color: #185875;
+  }
+
+  .table-container .yellow {
+    color: #FFF842;
+  }
 
   .table-container .container th h1 {
     font-weight: bold;
@@ -219,7 +223,7 @@
   .table-container .container td, .container th {
     padding-bottom: 2%;
     padding-top: 2%;
-    padding-left:2%;
+    padding-left: 2%;
   }
 
   /* Background-color of the odd rows */
@@ -236,7 +240,9 @@
     background-color: #1F2739;
   }
 
-  .table-container .container td:first-child { color: #FB667A; }
+  .table-container .container td:first-child {
+    color: #FB667A;
+  }
 
   .table-container .container tr:hover {
     background-color: #464A52;
@@ -261,7 +267,9 @@
 
   @media (max-width: 800px) {
     .table-container .container td:nth-child(4),
-    .table-container .container th:nth-child(4) { display: none; }
+    .table-container .container th:nth-child(4) {
+      display: none;
+    }
   }
 
   .jumbotron {
