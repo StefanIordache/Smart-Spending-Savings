@@ -1,3 +1,11 @@
+<%= content_for :stylesheets do %>
+<% end %>
+
+<%= content_for :scripts do %>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/datepicker.min.js" defer></script>
+<% end %>
+
 <%= render 'layouts/fuse' %>
 
 <main>
@@ -7,60 +15,65 @@
     <%= render 'layouts/sidebar' %>
 
     <div class="content-wrapper">
+
       <%= render 'layouts/navbar' %>
+
       <div class="content custom-scrollbar">
-
         <div class="page-layout blank p-6">
-
           <div class="jumbotron jumbotron-title">
             <h2 class="display-4">Your Expenses</h2>
           </div>
-
-
           <div class="custom-table-container">
             </br>
-
             <div class="text-center">
-              <%= link_to new_expense_path(@expense), {:remote => true, 'data-toggle' => "modal", 'data-target' => '#modal-window', class: "btn btn-info" } do %>
 
+              <%= link_to new_expense_path(@expense), {:remote => true, 'data-toggle' => "modal", 'data-target' => '#modal-window', class: "btn btn-info"} do %>
                 <i class="fas fa-plus-circle"></i> Add New Expense
               <% end %>
+
             </div>
 
             <% if @expenses.length > 0 %>
-              <table id="expenses_table" class="container">
+
+              <table id="expenses_table" class="container table table-hover">
                 <thead>
                 <tr>
                   <th><h1>Expense Title</h1></th>
                   <th><h1>Amount</h1></th>
                   <th><h1>Date</h1></th>
                   <th><h1>Description</h1></th>
-                  <th><h1>Actions</h1></th>
+                  <th class="text-center w-25"><h1>Actions</h1></th>
                 </tr>
                 </thead>
                 <tbody>
+
                 <% @expenses.each do |expense| %>
+
                   <tr>
                     <td><%= link_to expense.title, expense_path(expense), {:remote => true, 'data-toggle' => "modal", 'data-target' => '#modal-window'} %></td>
                     <td><%= expense.amount.to_s + ' ' + expense.currency.to_s.humanize.upcase %></td>
                     <td><%= expense.expense_date %></td>
                     <td><%= expense.description %></td>
-                    <td>
+                    <td class="text-center w-25">
 
-                      <%= link_to edit_expense_path(expense), {:remote => true, 'data-toggle' => "modal", 'data-target' => '#modal-window', class: "btn btn-info" } do %>
+                      <%= link_to edit_expense_path(expense), {:remote => true, 'data-toggle' => "modal", 'data-target' => '#modal-window', class: "btn btn-info"} do %>
                         <i class="fas fa-edit"></i>
                       <% end %>
 
-                      <%= link_to expense_path(expense), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-sm btn-danger" do %>
+                      <%= link_to expense_path(expense), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" do %>
                         <i class="fas fa-trash-alt"></i>
                       <% end %>
 
                     </td>
                   </tr>
+
                 <% end %>
+
                 </tbody>
               </table>
+
             <% else %>
+
               <div class="p-3 no-expenses-msg">
                 <section id="warning">
                   <section class="warningContent">
@@ -73,12 +86,9 @@
 
             <% end %>
           </div>
-
         </div>
-
       </div>
     </div>
-
   </div>
 
   <div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -86,17 +96,12 @@
       <div class="modal-content"></div>
     </div>
   </div>
-
-
 </main>
 
-
 <script type="text/javascript">
-
     <% if @expenses.length > 0 %>
-      $(document).ready(function () {
-          $('#expenses_table').DataTable();
-      });
+    $(document).ready(function () {
+        $('#expenses_table').DataTable();
+    });
     <% end %>
-
 </script>

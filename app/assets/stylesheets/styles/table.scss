@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/css/datepicker.min.css);
 
 /*.custom-table-container {
   font-family: 'Open Sans', sans-serif;
@@ -157,4 +158,41 @@
 .no-expenses-msg #warning .warningContent p {
   font-size: 16px;
   line-height: 16px;
+}
+
+.page-layout {
+  overflow: auto;
+}
+
+.page-layout::-webkit-scrollbar {
+  width: 5px;
+}
+
+.page-layout::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.page-layout::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.page-layout::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+table.dataTable thead th h1, table.dataTable tfoot th h1 {
+  font-size: 2rem;
+}
+
+.dataTables_wrapper {
+  display: inline-block;
+  width: 100%;
+}
+
+td, th {
+  vertical-align: middle !important;
+}
+
+select.form-control {
+  max-width: unset;
 }

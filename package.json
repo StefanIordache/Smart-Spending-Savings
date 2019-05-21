@@ -2,6 +2,7 @@
   "name": "sss",
   "private": true,
   "dependencies": {
+    "air-datepicker": "^2.2.3",
     "animate.css": "^3.7.0",
     "bootstrap": "^4.3.1",
     "d3": "^5.9.2",
