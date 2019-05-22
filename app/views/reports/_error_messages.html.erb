@@ -1,5 +1,6 @@
 <% if @report.errors.any? %>
   <script>
+
       $(function () {
           toastr.options = {"timeOut": "5000"};
 
@@ -7,7 +8,8 @@
           toastr.error('<%= msg %>');
           <% end %>
 
-          toastr.error('The form contains <%= pluralize(@report.errors.count, "error") %>.');
+          toastr.error('<%= t('errors', :count => @report.errors.count) %>');
       });
+
   </script>
 <% end %>

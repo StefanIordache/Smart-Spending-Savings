@@ -35,9 +35,11 @@
             </br>
 
             <div class="text-center">
+
               <%= link_to new_report_path(@report), {:remote => true, 'data-toggle' => "modal", 'data-target' => '#modal-window', class: "btn btn-info"} do %>
-                <i class="fas fa-plus-circle"></i> Create New Report
+                <i class="fas fa-plus-circle"></i> <%= t('reports.add_new_report') %>
               <% end %>
+
             </div>
 
             <% if @reports.length > 0 %>
@@ -45,11 +47,11 @@
               <table id="reports_table" class="container table table-hover">
                 <thead>
                 <tr>
-                  <th><h1>Report Title</h1></th>
-                  <th><h1>From Date</h1></th>
-                  <th><h1>To Date</h1></th>
-                  <th><h1>Description</h1></th>
-                  <th class="text-center w-25"><h1>Actions</h1></th>
+                  <th><h1><%= t('reports.title') %></h1></th>
+                  <th><h1><%= t('reports.from_date') %></h1></th>
+                  <th><h1><%= t('reports.to_date') %></h1></th>
+                  <th><h1><%= t('reports.description') %></h1></th>
+                  <th class="text-center w-25"><h1><%= t('reports.actions') %></h1></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -73,6 +75,7 @@
 
                     </td>
                   </tr>
+
                 <% end %>
 
                 </tbody>
@@ -84,8 +87,8 @@
                 <section id="warning">
                   <section class="warningContent">
                     <span>!</span>
-                    <h5 class="wHeading">We are sorry</h5>
-                    <p>You don't have any reports on our platform!</p>
+                    <h5 class="wHeading"><%= t('general.we_are_sorry') %></h5>
+                    <p><%= t('reports.no_reports') %></p>
                   </section>
                 </section>
               </div>
@@ -128,4 +131,5 @@
         toastr.error('<%= flash[:error] %>');
     });
     <% end %>
+
 </script>

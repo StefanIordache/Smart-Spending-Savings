@@ -31,7 +31,7 @@
 <% end %>
 
 <div class="jumbotron jumbotron-title">
-  <h2 class="display-4">View Expense</h2>
+  <h2 class="display-4"><%= t('expenses.view_expense') %></h2>
 </div>
 
 </br>
@@ -50,36 +50,39 @@
               <table class="table table-user-information">
                 <tbody>
                 <tr>
-                  <td>Amount:</td>
+                  <td><%= t('expenses.amount') %></td>
                   <td><%= @expense.amount.to_s + ' ' + @expense.currency.to_s.humanize.upcase %></td>
                 </tr>
                 <tr>
-                  <td>Expense date:</td>
+                  <td><%= t('expenses.expense_date') %></td>
                   <td><%= @expense.expense_date %></td>
                 </tr>
                 <tr>
-                  <td>Description:</td>
+                  <td><%= t('expenses.description') %></td>
                   <td><%= @expense.description %></td>
                 </tr>
-
                 </tbody>
               </table>
 
               <%= link_to "Back to My Expenses", action: "index", class: "btn btn-primary" %>
+
             </div>
           </div>
         </div>
         <div class="panel-footer">
+
           <%= link_to edit_expense_path(@expense), class: "btn btn-info" do %>
             <i class="fas fa-edit"></i>
           <% end %>
+
           <span class="pull-right">
+
             <%= link_to expense_path(@expense), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" do %>
                   <i class="fas fa-trash-alt"></i>
             <% end %>
+
           </span>
         </div>
-
       </div>
     </div>
   </div>

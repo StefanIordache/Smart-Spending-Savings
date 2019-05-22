@@ -1,5 +1,5 @@
 <div class="modal-header">
-  <h4 class="modal-title" id="myModalLabel">View expense</h4>
+  <h4 class="modal-title" id="myModalLabel"><%= t('expenses.view_expense') %></h4>
   <button type="button" class="close" data-dismiss="modal">x</button>
 </div>
 <div class="modal-body">
@@ -16,15 +16,15 @@
                 <table class="table table-user-information">
                   <tbody>
                   <tr>
-                    <td>Amount:</td>
+                    <td><%= t('expenses.amount') %></td>
                     <td><%= @expense.amount.to_s + ' ' + @expense.currency.to_s.humanize.upcase %></td>
                   </tr>
                   <tr>
-                    <td>Expense date:</td>
+                    <td><%= t('expenses.expense_date') %></td>
                     <td><%= @expense.expense_date %></td>
                   </tr>
                   <tr>
-                    <td>Description:</td>
+                    <td><%= t('expenses.description') %></td>
                     <td><%= @expense.description %></td>
                   </tr>
                   </tbody>

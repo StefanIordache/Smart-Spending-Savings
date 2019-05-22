@@ -1,114 +1,77 @@
 <%= render 'layouts/fuse' %>
 
 <main>
-
   <div id="wrapper">
 
     <%= render 'layouts/sidebar' %>
 
     <div class="content-wrapper">
+
       <%= render 'layouts/navbar' %>
+
       <div class="page-content-wrapper custom-scrollbar ps ps--active-y">
         <div class="page-header bg-primary text-auto d-flex flex-column justify-content-between px-6 pt-4 pb-0">
-
           <div class="row no-gutters align-items-start justify-content-between flex-nowrap">
-
-            <div>
-              <span class="h2">Welcome back, John!</span>
+            <div onclick="(function() { window.open('https://www.youtube.com/watch?v=xJoHxKLJqNI','_blank');})()" style="cursor: default;">
+              <span class="h2">Hatz, Johnule!</span>
             </div>
-
-            <button type="button" class="sidebar-toggle-button btn btn-icon d-block d-xl-none fuse-ripple-ready" data-fuse-bar-toggle="dashboard-project-sidebar" aria-label="Toggle sidebar">
+            <button type="button"
+                    class="sidebar-toggle-button btn btn-icon d-block d-xl-none fuse-ripple-ready"
+                    data-fuse-bar-toggle="dashboard-project-sidebar"
+                    aria-label="Toggle sidebar">
               <i class="icon icon-menu"></i>
             </button>
           </div>
-
-
         </div>
         <div class="content custom-scrollbar">
-
           <div class="widget-group row no-gutters">
             <div class="col-12 col-sm-6 col-xl-3 p-3">
-
               <div class="widget widget1 card">
-
                 <div class="widget-content pt-2 pb-8 d-flex flex-column align-items-center justify-content-center">
-
                   <div class="title text-secondary"><h1>25</h1></div>
-
                   <div class="sub-title h6 text-muted">Reports</div>
-
                 </div>
-
               </div>
             </div>
             <div class="col-12 col-sm-6 col-xl-3 p-3">
-
               <div class="widget widget1 card">
-
                 <div class="widget-content pt-2 pb-8 d-flex flex-column align-items-center justify-content-center">
-
                   <div class="title text-danger"><h1>2</h1></div>
-
                   <div class="sub-title h6 text-muted">Expenses this day</div>
-
                 </div>
               </div>
             </div>
             <div class="col-12 col-sm-6 col-xl-3 p-3">
-
               <div class="widget widget1 card">
                 <div class="widget-content pt-2 pb-8 d-flex flex-column align-items-center justify-content-center">
-
                   <div class="title text-warning"><h1>25</h1></div>
-
                   <div class="sub-title h6 text-muted">Expenses this week</div>
-
                 </div>
-
-
               </div>
             </div>
             <div class="col-12 col-sm-6 col-xl-3 p-3">
-
               <div class="widget widget1 card">
                 <div class="widget-content pt-2 pb-8 d-flex flex-column align-items-center justify-content-center">
-
                   <div class="title text-info"><h1>25</h1></div>
-
                   <div class="sub-title h6 text-muted">Expenses this month</div>
-
                 </div>
-
-
               </div>
             </div>
-
-
             <div class="col-12 p-3">
-
               <div class="widget widget5 card">
-
                 <div class="widget-header px-4 row no-gutters align-items-center justify-content-between">
-
                   <div class="col">
                     <span class="h6">Weekley expenses</span>
                   </div>
-
                   <div>
-
                     <button type="button" class="widget5-option-change-btn btn btn-link fuse-ripple-ready" data-interval="TW">
                       Cash Flow
                     </button>
-
                   </div>
                 </div>
-
                 <div class="widget-content p-4">
-
                   <div class="row">
-
                     <div class="col-12 col-lg-6">
-
                       <div id="widget5-main-chart">
                         <svg class="nvd3-svg">
                           <g class="nvd3 nv-wrap nv-multiBarWithLegend" transform="translate(32,48)">
@@ -253,15 +216,10 @@
                           </g>
                         </svg>
                       </div>
-
                     </div>
-
                     <div class="col-12 col-lg-6">
-
                       <div id="widget5-supporting-charts" class="row">
-
                         <div class="col-6 p-4">
-
                           <div id="widget5-created-chart">
                             <div class="h6 text-muted">RON</div>
                             <div class="h2 count">1</div>
@@ -329,11 +287,8 @@
                               </svg>
                             </div>
                           </div>
-
                         </div>
-
                         <div class="col-6 p-4">
-
                           <div id="widget5-closed-chart">
                             <div class="h6 text-muted">EUR</div>
                             <div class="h2 count">4.74</div>
@@ -401,11 +356,8 @@
                               </svg>
                             </div>
                           </div>
-
                         </div>
-
                         <div class="col-6 p-4">
-
                           <div id="widget5-re-opened-chart">
                             <div class="h6 text-muted">USD</div>
                             <div class="h2 count">4.27</div>
@@ -473,11 +425,8 @@
                               </svg>
                             </div>
                           </div>
-
                         </div>
-
                         <div class="col-6 p-4">
-
                           <div id="widget5-wont-fix-chart">
                             <div class="h6 text-muted">GBP</div>
                             <div class="h2 count">5.42</div>
@@ -545,7 +494,6 @@
                               </svg>
                             </div>
                           </div>
-
                         </div>
                       </div>
                     </div>
@@ -554,17 +502,12 @@
               </div>
             </div>
             <div class="col-12 p-3">
-
               <div class="widget widget1 card">
-
                 <div class="widget-header pl-4 pr-2 row no-gutters align-items-center justify-content-between">
-
                   <div class="col">
                     <span class="h6">Year overview</span>
                   </div>
-
                 </div>
-
                 <div class="widget-content p-4">
                   <div id="widget1-main-chart">
                     <svg class="nvd3-svg">
@@ -1085,19 +1028,14 @@
                     </svg>
                   </div>
                 </div>
-
               </div>
             </div>
             <div class="col-12 col-lg-6 p-3">
-
               <div class="widget widget6 card">
-
                 <div class="widget-header px-4 row no-gutters align-items-center justify-content-between">
-
                   <div class="col">
                     <span class="h6">Monthly expenses</span>
                   </div>
-
                   <div class="">
                     <select id="widget6-option-select" class="h6 custom-select">
                       <option selected="" value="TW">January</option>
@@ -1107,15 +1045,10 @@
                       <option value="DW">May</option>
                     </select>
                   </div>
-
                 </div>
-
                 <div class="widget-content">
-
                   <div class="row no-gutters">
-
                     <div class="col-12">
-
                       <div id="widget6-main-chart" class="p-4">
                         <svg class="nvd3-svg">
                           <g class="nvd3 nv-wrap nv-pieChart" transform="translate(0,30)">
@@ -1184,145 +1117,94 @@
                           </g>
                         </svg>
                       </div>
-
                     </div>
-
                     <div class="divider col-12"></div>
-
                     <div id="added-tasks" class="col-6 d-flex flex-column align-items-center justify-content-center py-4">
-
                       <div class="count h2">594</div>
-
                       <div class="count-title">Tasks Added</div>
-
                     </div>
-
                     <div id="completed-tasks" class="col-6 d-flex flex-column align-items-center justify-content-center py-4">
-
                       <div class="count h2">287</div>
-
                       <div class="count-title">Tasks Completed</div>
-
                     </div>
-
                   </div>
                 </div>
               </div>
             </div>
             <div class="col-12 col-lg-6 p-3">
-
               <div class="widget widget-7 card">
-
                 <div class="widget-header px-4 row no-gutters align-items-center justify-content-between">
-
                   <div class="col">
                     <span class="h6">Recently added</span>
                   </div>
-
                   <div class="">
                     <select class="h6 custom-select">
                       <option selected="" value="ron">RON</option>
                       <option value="usd">USD</option>
                       <option value="eur">EUR</option>
                       <option value="gbp">GBP</option>
-
                     </select>
                   </div>
                 </div>
-
                 <div class="widget-content p-4">
-
                   <div class="py-4 row no-gutters align-items-center justify-content-between">
-
                     <div class="col">
-
                       <div class="h6">Carrefour</div>
-
                       <div>
                         <span class="text-muted">12.03.2019</span>
-
                       </div>
-
                     </div>
-
                     <div class="col-auto">
                       <span class="text-muted">200</span>
                     </div>
                   </div>
                   <div class="py-4 row no-gutters align-items-center justify-content-between">
-
                     <div class="col">
-
                       <div class="h6">Carrefour</div>
-
                       <div>
                         <span class="text-muted">12.03.2019</span>
-
                       </div>
-
                     </div>
-
                     <div class="col-auto">
                       <span class="text-muted">200</span>
                     </div>
                   </div>
                   <div class="py-4 row no-gutters align-items-center justify-content-between">
-
                     <div class="col">
-
                       <div class="h6">Carrefour</div>
-
                       <div>
                         <span class="text-muted">12.03.2019</span>
-
                       </div>
-
                     </div>
-
                     <div class="col-auto">
                       <span class="text-muted">200</span>
                     </div>
                   </div>
                   <div class="py-4 row no-gutters align-items-center justify-content-between">
-
                     <div class="col">
-
                       <div class="h6">Carrefour</div>
-
                       <div>
                         <span class="text-muted">12.03.2019</span>
-
                       </div>
-
                     </div>
-
                     <div class="col-auto">
                       <span class="text-muted">200</span>
                     </div>
                   </div>
                   <div class="py-4 row no-gutters align-items-center justify-content-between">
-
                     <div class="col">
-
                       <div class="h6">Carrefour</div>
-
                       <div>
                         <span class="text-muted">12.03.2019</span>
-
                       </div>
-
                     </div>
-
                     <div class="col-auto">
                       <span class="text-muted">200</span>
                     </div>
                   </div>
-
-
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
