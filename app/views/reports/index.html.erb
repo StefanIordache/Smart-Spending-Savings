@@ -8,6 +8,9 @@
   <script type="text/javascript"
           src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"
           media="all" data-turbolinks-track="reload" defer></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/datepicker.min.js"
+          media="all" data-turbolinks-track="reload" defer></script>
 <% end %>
 
 <%= render 'layouts/fuse' %>
@@ -117,6 +120,12 @@
     <% if flash[:success] != nil %>
     $(function () {
         toastr.success('<%= flash[:success] %>');
+    });
+    <% end %>
+
+    <% if flash[:error] != nil %>
+    $(function () {
+        toastr.error('<%= flash[:error] %>');
     });
     <% end %>
 </script>

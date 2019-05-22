@@ -193,6 +193,10 @@ td, th {
   vertical-align: middle !important;
 }
 
+th {
+  cursor: pointer;
+}
+
 select.form-control {
   max-width: unset;
 }

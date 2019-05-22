@@ -18,6 +18,7 @@ class ReportsController < ApplicationController
   def edit
     @button_text = "Update"
     @report = Report.find(params[:id])
+
     respond_to do |format|
       format.html
       format.js
@@ -28,15 +29,22 @@ class ReportsController < ApplicationController
     @report = Report.find(params[:id])
 
     if @report.update_attributes(expense_params)
+
+      flash[:success] = "Report updated!"
       redirect_to action: 'index'
+
     else
+
+      flash[:error] = "Report update failed!"
       render 'edit'
+
     end
   end
 
   def new
     @button_text = "Create"
     @report = Report.new
+
     respond_to do |format|
       format.html
       format.js
@@ -62,9 +70,14 @@ class ReportsController < ApplicationController
         end
       end
 
+      flash[:success] = "Report created!"
       redirect_to action: 'index'
+
     else
+
+      flash[:error] = "Report create failed!"
       render 'new'
+
     end
 
   end
