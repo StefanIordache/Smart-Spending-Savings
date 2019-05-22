@@ -1,38 +1,31 @@
 <aside id="aside" class="aside aside-left" data-fuse-bar="aside" data-fuse-bar-media-step="md" data-fuse-bar-position="left">
   <div class="aside-content bg-primary-700 text-auto">
-
     <div class="aside-toolbar">
-
       <div class="logo">
         <span class="logo-icon">SSS</span>
         <span class="logo-text">Smart Spending & Savings</span>
       </div>
-
       <button id="toggle-fold-aside-button" type="button" class="btn btn-icon d-none d-lg-block" data-fuse-aside-toggle-fold>
         <i class="icon icon-backburger"></i>
       </button>
-
     </div>
-
     <ul class="nav flex-column custom-scrollbar" id="sidenav" data-children=".nav-item">
-
       <li class="subheader">
         <span>YOUR MENU</span>
       </li>
-
       <li class="nav-item">
+
         <%= link_to({:controller => :expenses, :action => :index}, :class => "nav-link ripple") do %>
           <i class="icon s-4 fas fa-money-bill"></i>
-
-          <span>Expenses</span>
+          <span><%= t('expenses.this') %></span>
         <% end %>
-      </li>
 
+      </li>
       <li class="nav-item">
+
         <%= link_to({:controller => :reports, :action => :index}, :class => "nav-link ripple") do %>
           <i class="icon s-4 fas fa-file-invoice"></i>
-
-          <span>Reports</span>
+          <span><%= t('reports.this') %></span>
         <% end %>
       </li>
       <li class="nav-item">
@@ -42,35 +35,6 @@
           <span>Tags</span>
         <% end %>
       </li>
-
-<!--      <li class="nav-item" role="tab" id="heading-dashboards">-->
-
-<!--        <a class="nav-link ripple with-arrow collapsed" data-toggle="collapse" data-target="#collapse-dashboards" href="#" aria-expanded="false" aria-controls="collapse-dashboards">-->
-
-<!--          <i class="icon s-4 icon-tile-four"></i>-->
-
-<!--          <span>Reports</span>-->
-<!--        </a>-->
-<!--        <ul id="collapse-dashboards" class='collapse ' role="tabpanel" aria-labelledby="heading-dashboards" data-children=".nav-item">-->
-
-<!--          <li class="nav-item">-->
-<!--            <a class="nav-link ripple " href="#" data-url="user-interface-page-layouts-blank.html">-->
-
-<!--              <span>Monthly spendings</span>-->
-<!--            </a>-->
-<!--          </li>-->
-
-<!--          <li class="nav-item">-->
-<!--            <a class="nav-link ripple " href="#" data-url="user-interface-page-layouts-blank.html">-->
-
-<!--              <span>Products</span>-->
-<!--            </a>-->
-<!--          </li>-->
-
-<!--        </ul>-->
-<!--      </li>-->
-
     </ul>
   </div>
-
 </aside>

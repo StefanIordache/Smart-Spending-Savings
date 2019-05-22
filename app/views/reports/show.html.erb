@@ -1,5 +1,37 @@
+<%= content_for :stylesheets do %>
+  <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+        media="all" data-turbolinks-track="reload"/>
+  <style>
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  </style>
+<% end %>
+
+<%= content_for :scripts do %>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"
+          media="all" data-turbolinks-track="reload" defer></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/datepicker.min.js"
+          media="all" data-turbolinks-track="reload" defer></script>
+<% end %>
+
 <div class="jumbotron jumbotron-title">
-  <h2 class="display-4">View Report</h2>
+  <h2 class="display-4"><%= t('reports.view_report') %></h2>
 </div>
 
 </br>
@@ -18,90 +50,102 @@
               <table class="table table-user-information">
                 <tbody>
                 <tr>
-                  <td>From Date:</td>
+                  <td><%= t('reports.from_date') %></td>
                   <td><%= @report.from_date %></td>
                 </tr>
                 <tr>
-                  <td>To date:</td>
+                  <td><%= t('reports.to_date') %></td>
                   <td><%= @report.to_date %></td>
                 </tr>
                 <tr>
-                  <td>Currency:</td>
+                  <td><%= t('reports.currency') %></td>
                   <td><%= @report.currency.to_s.humanize.upcase %></td>
                 </tr>
                 <tr>
-                  <td>Description:</td>
+                  <td><%= t('reports.description') %></td>
                   <td><%= @report.description %></td>
                 </tr>
-
                 </tbody>
               </table>
 
               <%= link_to "Back to My Reports", action: "index", class: "btn btn-primary" %>
+
             </div>
           </div>
         </div>
         <div class="panel-footer">
-          <%= link_to edit_report_path(@report), class: "btn btn-sm btn-info" do %>
+
+          <%= link_to edit_report_path(@report), class: "btn btn-info" do %>
             <i class="fas fa-edit"></i>
           <% end %>
+
           <span class="pull-right">
-            <%= link_to report_path(@report), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-sm btn-danger" do %>
-                  <i class="fas fa-trash-alt"></i>
+
+            <%= link_to report_path(@report), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" do %>
+              <i class="fas fa-trash-alt"></i>
             <% end %>
+
           </span>
         </div>
-
       </div>
     </div>
   </div>
 </div>
-<div>
+
+<div class="container">
   <h3>Pie chart</h3>
   <%= pie_chart @report.expenses.group(:currency).count %>
 </div>
-<div>
+
+<div class="container">
   <h3>Bar chart</h3>
   <%= bar_chart @report.expenses.group(:amount).count %>
 </div>
-<div>
+
+<div class="container">
   <h3>Line chart</h3>
   <%= line_chart @report.expenses.group_by_day(:expense_date, format: "%B %d, %Y").count, discrete: true %>
 </div>
 
 <div class="jumbotron jumbotron-title">
-  <h2 class="display-4">Report Expenses</h2>
+  <h2 class="display-4"><%= t('reports.expenses') %></h2>
 </div>
 
 <div class="table-container">
-  </br>
-
   <table id="expenses_table" class="container">
     <thead>
     <tr>
-      <th><h1>Expense Title</h1></th>
-      <th><h1>Amount</h1></th>
-      <th><h1>Date</h1></th>
-      <th><h1>Description</h1></th>
-      <th><h1>Actions</h1></th>
+      <th><h1><%= t('expenses.title') %></h1></th>
+      <th><h1><%= t('expenses.amount') %></h1></th>
+      <th><h1><%= t('expenses.expense_date') %></h1></th>
+      <th><h1><%= t('expenses.description') %></h1></th>
+      <th><h1><%= t('expenses.actions') %></h1></th>
     </tr>
     </thead>
     <tbody>
+
     <% @report.expenses.each do |expense| %>
+
       <tr>
         <td><%= link_to expense.title, expense_path(expense) %></td>
         <td><%= expense.amount %></td>
         <td><%= expense.expense_date %></td>
         <td><%= expense.description %></td>
         <td>
+
           <%= link_to :action => "remove_expense_from_report",
-                      :report_id => @report.id, :expense_id => expense.id,
-                      data: {confirm: 'Are you sure?'}, class: "btn btn-sm btn-danger" do %>
+                      :report_id => @report.id,
+                      :expense_id => expense.id,
+                      data: {confirm: 'Are you sure?'},
+                      class: "btn btn-danger" do %>
             <i class="fas fa-trash-alt"></i>
           <% end %>
+
         </td>
       </tr>
+
     <% end %>
+
     </tbody>
   </table>
 </div>

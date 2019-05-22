@@ -10,6 +10,7 @@ class ExpensesController < ApplicationController
   def show
     @expense = Expense.find(params[:id])
     @expense.tags.build
+
     respond_to do |format|
       format.html
       format.js
@@ -21,6 +22,7 @@ class ExpensesController < ApplicationController
     @expense = Expense.find(params[:id])
     @tags = {}
     Tag.all.collect {|t| @tags[t.title] = t.id }
+
     respond_to do |format|
       format.html
       format.js
@@ -33,9 +35,15 @@ class ExpensesController < ApplicationController
     handle_tags_for_expense
     
     if @expense.update_attributes(expense_params)
+
+      flash[:success] = "Expense updated!"
       redirect_to action: 'index'
+
     else
+
+      flash[:error] = "Expense update failed!"
       render 'edit'
+
     end
   end
 
@@ -56,12 +64,19 @@ class ExpensesController < ApplicationController
       @expense.user_id = current_user.id
       handle_tags_for_expense
       if @expense.save
+
+        flash[:success] = "Expense created!"
         redirect_to action: 'index'
+
       else
+
+        flash[:error] = "Expense create failed!"
         render 'new'
+
       end
 
     else
+      flash[:error] = "Expense create failed!"
       render 'new'
     end
 

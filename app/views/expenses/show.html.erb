@@ -1,5 +1,37 @@
+<%= content_for :stylesheets do %>
+  <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+        media="all" data-turbolinks-track="reload"/>
+  <style>
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  </style>
+<% end %>
+
+<%= content_for :scripts do %>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"
+          media="all" data-turbolinks-track="reload" defer></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/datepicker.min.js"
+          media="all" data-turbolinks-track="reload" defer></script>
+<% end %>
+
 <div class="jumbotron jumbotron-title">
-  <h2 class="display-4">View Expense</h2>
+  <h2 class="display-4"><%= t('expenses.view_expense') %></h2>
 </div>
 
 </br>
@@ -18,36 +50,39 @@
               <table class="table table-user-information">
                 <tbody>
                 <tr>
-                  <td>Amount:</td>
+                  <td><%= t('expenses.amount') %></td>
                   <td><%= @expense.amount.to_s + ' ' + @expense.currency.to_s.humanize.upcase %></td>
                 </tr>
                 <tr>
-                  <td>Expense date:</td>
+                  <td><%= t('expenses.expense_date') %></td>
                   <td><%= @expense.expense_date %></td>
                 </tr>
                 <tr>
-                  <td>Description:</td>
+                  <td><%= t('expenses.description') %></td>
                   <td><%= @expense.description %></td>
                 </tr>
-
                 </tbody>
               </table>
 
               <%= link_to "Back to My Expenses", action: "index", class: "btn btn-primary" %>
+
             </div>
           </div>
         </div>
         <div class="panel-footer">
-          <%= link_to edit_expense_path(@expense), class: "btn btn-sm btn-info" do%>
+
+          <%= link_to edit_expense_path(@expense), class: "btn btn-info" do %>
             <i class="fas fa-edit"></i>
           <% end %>
+
           <span class="pull-right">
-            <%= link_to expense_path(@expense), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" do %>
+
+            <%= link_to expense_path(@expense), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" do %>
                   <i class="fas fa-trash-alt"></i>
             <% end %>
+
           </span>
         </div>
-
       </div>
     </div>
   </div>
@@ -55,65 +90,63 @@
 
 <style>
 
-    .user-row {
-        margin-bottom: 14px;
-    }
+  .user-row {
+    margin-bottom: 14px;
+  }
 
-    .user-row:last-child {
-        margin-bottom: 0;
-    }
+  .user-row:last-child {
+    margin-bottom: 0;
+  }
 
-    .dropdown-user {
-        margin: 13px 0;
-        padding: 5px;
-        height: 100%;
-    }
+  .dropdown-user {
+    margin: 13px 0;
+    padding: 5px;
+    height: 100%;
+  }
 
-    .dropdown-user:hover {
-        cursor: pointer;
-    }
+  .dropdown-user:hover {
+    cursor: pointer;
+  }
 
-    .table-user-information > tbody > tr {
-        border-top: 1px solid rgb(221, 221, 221);
-    }
+  .table-user-information > tbody > tr {
+    border-top: 1px solid rgb(221, 221, 221);
+  }
 
-    .table-user-information > tbody > tr:first-child {
-        border-top: 0;
-    }
+  .table-user-information > tbody > tr:first-child {
+    border-top: 0;
+  }
 
 
-    .table-user-information > tbody > tr > td {
-        border-top: 0;
-    }
-    .toppad {
-        margin-top:20px;
-    }
+  .table-user-information > tbody > tr > td {
+    border-top: 0;
+  }
+
+  .toppad {
+    margin-top: 20px;
+  }
 
 </style>
 
 <script type="text/javascript">
 
-    $(document).ready(function() {
+    $(document).ready(function () {
         var panels = $('.user-infos');
         var panelsButton = $('.dropdown-user');
         panels.hide();
 
         //Click dropdown
-        panelsButton.click(function() {
+        panelsButton.click(function () {
             //get data-for attribute
             var dataFor = $(this).attr('data-for');
             var idFor = $(dataFor);
 
             //current button
             var currentButton = $(this);
-            idFor.slideToggle(400, function() {
+            idFor.slideToggle(400, function () {
                 //Completed slidetoggle
-                if(idFor.is(':visible'))
-                {
+                if (idFor.is(':visible')) {
                     currentButton.html('<i class="glyphicon glyphicon-chevron-up text-muted"></i>');
-                }
-                else
-                {
+                } else {
                     currentButton.html('<i class="glyphicon glyphicon-chevron-down text-muted"></i>');
                 }
             })
@@ -122,7 +155,7 @@
 
         $('[data-toggle="tooltip"]').tooltip();
 
-        $('button').click(function(e) {
+        $('button').click(function (e) {
             e.preventDefault();
             alert("This is a demo.\n :-)");
         });

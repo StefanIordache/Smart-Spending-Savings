@@ -1,5 +1,5 @@
 <div class="modal-header">
-  <h4 class="modal-title" id="myModalLabel">View expense</h4>
+  <h4 class="modal-title" id="myModalLabel"><%= t('reports.view_report') %></h4>
   <button type="button" class="close" data-dismiss="modal">x</button>
 </div>
 <div class="modal-body">
@@ -16,19 +16,19 @@
                 <table class="table table-user-information">
                   <tbody>
                   <tr>
-                    <td>From Date:</td>
+                    <td><%= t('reports.from_date') %></td>
                     <td><%= @report.from_date %></td>
                   </tr>
                   <tr>
-                    <td>To date:</td>
+                    <td><%= t('reports.to_date') %></td>
                     <td><%= @report.to_date %></td>
                   </tr>
                   <tr>
-                    <td>Currency:</td>
+                    <td><%= t('reports.currency') %></td>
                     <td><%= @report.currency.to_s.humanize.upcase %></td>
                   </tr>
                   <tr>
-                    <td>Description:</td>
+                    <td><%= t('reports.description') %></td>
                     <td><%= @report.description %></td>
                   </tr>
                   </tbody>

@@ -10,7 +10,6 @@
           <div class="col-sm-3 col-md-2 col-lg-2">
             <i class="lni lni-enter" aria-hidden="true"></i>
           </div>
-
           <div class="col-sm-9 col-md-10 col-lg-10">
             <h1 class="heading"><%= t('home.register') %></h1>
           </div>
@@ -23,7 +22,6 @@
           <div class="col-sm-3 col-md-2 col-lg-2">
             <i class="lni lni-user" aria-hidden="true"></i>
           </div>
-
           <div class="col-sm-9 col-md-10 col-lg-10">
             <h1 class="heading"><%= t('home.create_your_profile') %></h1>
           </div>
@@ -36,7 +34,6 @@
           <div class="col-sm-3 col-md-2 col-lg-2">
             <i class="lni lni-cloud-upload" aria-hidden="true"></i>
           </div>
-
           <div class="col-sm-9 col-md-10 col-lg-10">
             <h1 class="heading"><%= t('home.upload_expenses') %></h1>
           </div>
@@ -49,7 +46,6 @@
           <div class="col-sm-3 col-md-2 col-lg-2">
             <i class="lni lni-search" aria-hidden="true"></i>
           </div>
-
           <div class="col-sm-9 col-md-10 col-lg-10">
             <h1 class="heading"><%= t('home.manage_your_money') %></h1>
           </div>
@@ -59,8 +55,8 @@
         </br>
         </br>
         </br>
-      </div>
 
+      </div>
       <div class="col-md-4 custom-card-welcome">
         <div class="card regform wow bounce animated" data-wow-delay="0.05s">
           <div class="card-body regform">
@@ -73,6 +69,7 @@
 
               <%= simple_form_for(:user, :url => registration_path(:user), :html => { :class => 'custom-form-welcome'}) do |f| %>
                 <%= f.error_notification %>
+
                 <div class="form-group">
                   <label for="email"><%= t('home.email_address') %></label>
                   <%= f.input_field :email,
@@ -82,6 +79,7 @@
                                     class: "form-control field-with-errors",
                                     label: false %>
                 </div>
+
                 <div class="form-group">
                   <label for="password"><%= t('home.password') %></label>
                   <%= f.input_field :password,
@@ -91,6 +89,7 @@
                                     class: "form-control field-with-errors",
                                     label: false %>
                 </div>
+
                 <div class="form-group">
                   <label for="email"><%= t('home.password_confirmation') %></label>
                   <%= f.input_field :password_confirmation,
@@ -99,11 +98,13 @@
                                     class: "form-control field-with-errors",
                                     label: false %>
                 </div>
+
                 <div class="col-md-12 text-center mb-3">
                   <div class="form-group">
                     <%= f.button :submit, t('home.sign_up'), class: "btn btn-block mybtn btn-primary tx-tfm" %>
                   </div>
                 </div>
+
               <% end %>
 
               <div class="col-md-12 ">

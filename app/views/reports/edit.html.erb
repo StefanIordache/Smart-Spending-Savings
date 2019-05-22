@@ -1,9 +1,42 @@
+<%= content_for :stylesheets do %>
+  <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+        media="all" data-turbolinks-track="reload"/>
+  <style>
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  </style>
+<% end %>
+
+<%= content_for :scripts do %>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"
+          media="all" data-turbolinks-track="reload" defer></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/datepicker.min.js"
+          media="all" data-turbolinks-track="reload" defer></script>
+<% end %>
+
 <div class="jumbotron jumbotron-title">
-  <h2 class="display-4">Edit Report</h2>
+  <h2 class="display-4"><%= t('reports.edit_report') %></h2>
 </div>
 
 </br>
 </br>
+
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 toppad">
