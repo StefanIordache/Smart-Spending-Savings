@@ -9,6 +9,7 @@ class ExpensesController < ApplicationController
 
   def show
     @expense = Expense.find(params[:id])
+    @expense.tags.build
     respond_to do |format|
       format.html
       format.js
@@ -18,6 +19,8 @@ class ExpensesController < ApplicationController
   def edit
     @button_text = "Update"
     @expense = Expense.find(params[:id])
+    @tags = {}
+    Tag.all.collect {|t| @tags[t.title] = t.id }
     respond_to do |format|
       format.html
       format.js
@@ -27,6 +30,8 @@ class ExpensesController < ApplicationController
   def update
     @expense = Expense.find(params[:id])
 
+    handle_tags_for_expense
+    
     if @expense.update_attributes(expense_params)
       redirect_to action: 'index'
     else
@@ -37,6 +42,8 @@ class ExpensesController < ApplicationController
   def new
     @button_text = "Create"
     @expense = Expense.new
+    @tags = {}
+    Tag.all.collect {|t| @tags[t.title] = t.id }
     respond_to do |format|
       format.html
       format.js
@@ -47,7 +54,7 @@ class ExpensesController < ApplicationController
     if current_user
       @expense = Expense.new(expense_params)
       @expense.user_id = current_user.id
-
+      handle_tags_for_expense
       if @expense.save
         redirect_to action: 'index'
       else
@@ -75,5 +82,12 @@ class ExpensesController < ApplicationController
       params.require(:expense).permit(:title, :description, :amount,
                                       :expense_date, :currency)
     end
+    def handle_tags_for_expense
+      if params['tag_ids']
+        @expense.tags.clear
+        tags = params['tag_ids'].map { |id| Tag.find(id) }
+        @expense.tags << tags 
+    end 
 
+end
 end

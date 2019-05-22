@@ -1,0 +1,74 @@
+<%= content_for :stylesheets do %>
+    <% end %>
+    
+    <%= content_for :scripts do %>
+      <script type="text/javascript"
+              src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/datepicker.min.js"
+              media="all" data-turbolinks-track="reload" defer></script>
+    <% end %>
+    
+    <%= render 'layouts/fuse' %>
+    
+    <main>
+    
+      <div id="wrapper">
+    
+        <%= render 'layouts/sidebar' %>
+    
+        <div class="content-wrapper">
+    
+          <%= render 'layouts/navbar' %>
+    
+          <div class="content custom-scrollbar">
+            <div class="page-layout blank p-6">
+              <div class="jumbotron jumbotron-title">
+                <h2 class="display-4">Available tags</h2>
+              </div>
+              <div class="custom-table-container">
+                </br>
+                <div class="text-center">
+                <%= link_to new_tag_path(@tag), {:remote => true, 'data-toggle' => "modal", 'data-target' => '#modal-window', class: "btn btn-info"} do %>
+                  <i class="fas fa-plus-circle"></i> Add New Tag
+                  <% end %>
+                 
+                </div>
+    
+                <% if @tags.length > 0 %>
+
+                <% @tags.each do |tag| %>
+                    <div class="div_custom">
+                <a href="#" class="tag"><span><%= tag.title %></span></a>
+                 <%= link_to tag_path(tag), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" do %>
+                    <i class="fas fa-trash-alt"></i>
+                <% end %>
+                </div>
+                 <% end %>
+    
+                <% else %>
+    
+                  <div class="p-3 no-expenses-msg">
+                    <section id="warning">
+                      <section class="warningContent">
+                        <span>!</span>
+                        <h5 class="wHeading">We are sorry</h5>
+                        <p>You don't have any tags on our platform!</p>
+                      </section>
+                    </section>
+                  </div>
+    
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content"></div>
+        </div>
+      </div>
+    </main>
+    <style>
+
+    </style>

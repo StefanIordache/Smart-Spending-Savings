@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   resources :reports, only: [:index, :show, :edit, :update, :new, :create, :destroy]
 
+  resources :tags, only: [:index, :edit, :update, :new, :create, :destroy]
+
   get 'reports/remove_expense_from_report/:report_id/:expense_id', :to => 'reports#remove_expense_from_report'
 
 end
