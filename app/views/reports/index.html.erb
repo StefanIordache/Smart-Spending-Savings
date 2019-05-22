@@ -1,3 +1,15 @@
+<%= content_for :stylesheets do %>
+  <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+        media="all" data-turbolinks-track="reload"/>
+<% end %>
+
+<%= content_for :scripts do %>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"
+          media="all" data-turbolinks-track="reload" defer></script>
+<% end %>
+
 <%= render 'layouts/fuse' %>
 
 <main>
@@ -102,4 +114,9 @@
     });
     <% end %>
 
+    <% if flash[:success] != nil %>
+    $(function () {
+        toastr.success('<%= flash[:success] %>');
+    });
+    <% end %>
 </script>

@@ -1,35 +1,65 @@
-<!-- STYLESHEETS -->
+<%= content_for :stylesheets do %>
+  <style type="text/css">
+    [fuse-cloak],
+    .fuse-cloak {
+      display: none !important;
+    }
 
-<style type="text/css">
-  [fuse-cloak],
-  .fuse-cloak {
-    display: none !important;
-  }
-</style>
+    #toggle-fold-aside-button {
+      display: none !important;
+    }
+  </style>
 
-<%= stylesheet_link_tag 'styles/dashboard' %>
-<%= stylesheet_link_tag 'styles/table' %>
+  <%= stylesheet_link_tag 'styles/dashboard', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'styles/table', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% end %>
 
-<%= javascript_include_tag 'dashboard/dashboard', :type => 'module' %>
+<%= content_for :scripts do %>
+  <%= javascript_include_tag 'dashboard/dashboard', :type => 'module', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.4.0/perfect-scrollbar.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.4.0/perfect-scrollbar.min.js"
+          media="all" data-turbolinks-track="reload"></script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.2/d3.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.2/d3.min.js"
+          media="all" data-turbolinks-track="reload"></script>
 
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"
+          media="all" data-turbolinks-track="reload"></script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.js"
+          media="all" data-turbolinks-track="reload"></script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.buttons.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.buttons.js"
+          media="all" data-turbolinks-track="reload"></script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.callbacks.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.callbacks.js"
+          media="all" data-turbolinks-track="reload"></script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.mobile.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.mobile.js"
+          media="all" data-turbolinks-track="reload"></script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.history.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.history.js"
+          media="all" data-turbolinks-track="reload"></script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.desktop.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.desktop.js"
+          media="all" data-turbolinks-track="reload"></script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.confirm.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.confirm.js"
+          media="all" data-turbolinks-track="reload"></script>
 
-<%= javascript_include_tag 'js/main' %>
+  <%= javascript_include_tag 'js/main', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% end %>
+
+
+
+

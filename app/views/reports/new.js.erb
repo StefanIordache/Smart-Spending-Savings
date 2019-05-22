@@ -1,2 +1,10 @@
 $("#modal-window").find(".modal-content").html("<%= j (render 'new') %>");
 $("#modal-window").modal();
+
+$('#report_from_date').on('change', function () {
+    $('#report_to_date').attr('min', $(this).val());
+});
+
+$('#report_to_date').on('change', function () {
+    $('#report_from_date').attr('max', $(this).val());
+});

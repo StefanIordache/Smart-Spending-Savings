@@ -1,41 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Smart Spending & Savings</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Smart Spending & Savings</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= yield :stylesheets %>
+  <style type="text/css">
+    [fuse-cloak],
+    .fuse-cloak {
+      display: none !important;
+    }
 
-    <%= yield :stylesheets %>
+    @font-face {
+      font-family: 'fuse-iconfont';
+      src: url('../assets/fonts/fuse-iconfont.ttf') format('truetype'),
+      url('../assetsfonts/fuse-iconfont.woff') format('woff'),
+      url('../assetsfonts/fuse-iconfont.svg') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
 
-    <style type="text/css">
-      [fuse-cloak],
-      .fuse-cloak {
-        display: none !important;
-      }
+  <%= javascript_include_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= yield :scripts %>
 
-      @font-face {
-        font-family: 'fuse-iconfont';
-        src:
-            url('../assets/fonts/fuse-iconfont.ttf') format('truetype'),
-            url('../assetsfonts/fuse-iconfont.woff') format('woff'),
-            url('../assetsfonts/fuse-iconfont.svg') format('svg');
-        font-weight: normal;
-        font-style: normal;
-      }
-    </style>
+</head>
 
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= yield :scripts %>
+<body class="layout layout-vertical layout-left-navigation layout-above-toolbar layout-above-footer">
 
-  </head>
+<%= yield %>
 
-  <body class="layout layout-vertical layout-left-navigation layout-above-toolbar layout-above-footer">
-
-    <%= yield%>
-
-  </body>
+</body>
 </html>
 
 
