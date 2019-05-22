@@ -68,6 +68,7 @@ en:
     this: "Expenses"
     title: "Title"
     amount: "Amount"
+    tags: "Tags"
     expense_date: "Expense date"
     description: "Description"
     actions: "Actions"

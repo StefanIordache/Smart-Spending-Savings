@@ -49,6 +49,7 @@
                   <th><h1><%= t('expenses.amount') %></h1></th>
                   <th><h1><%= t('expenses.expense_date') %></h1></th>
                   <th><h1><%= t('expenses.description') %></h1></th>
+                  <th><h1><%= t('expenses.tags') %></h1></th>
                   <th class="text-center w-25"><h1><%= t('expenses.actions') %></h1></th>
                 </tr>
                 </thead>
@@ -62,7 +63,7 @@
                     <td><%= expense.expense_date %></td>
                     <td><%= expense.description %></td>
                     <td><% expense.tags.each do |tag| %>
-                      <span><%= tag.title %></span>
+                      <span> | <%= tag.title %> | </span>
                       <% end %>
                     </td>  
                     <td class="text-center w-25">

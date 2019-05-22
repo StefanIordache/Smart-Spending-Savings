@@ -200,3 +200,33 @@ th {
 select.form-control {
   max-width: unset;
 }
+select.form-control {
+  max-width: unset;
+}
+
+select.form-control {
+  padding-right: unset;
+  background-image: unset;
+
+}
+
+select.form-control option {
+  padding: 1.3rem 2rem;
+  margin: unset;
+}
+
+#tag_ids_::-webkit-scrollbar {
+  width: 5px;
+}
+
+#tag_ids_::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+#tag_ids_::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+#tag_ids_::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
