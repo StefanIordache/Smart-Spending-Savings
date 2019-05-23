@@ -36,7 +36,8 @@
             <div class="col-12 col-sm-6 col-xl-3 p-3">
               <div class="widget widget1 card">
                 <div class="widget-content pt-2 pb-8 d-flex flex-column align-items-center justify-content-center">
-                  <div class="title text-danger"><h1><%= @expenses.group(:expense_date === Date.current.strftime("%y-%m-%d")).count %></h1></div>
+                  <!--<div class="title text-danger"><h1><%#= @expenses.where(expense_date.strftime("%y-%m-%d") == Date.today.strftime("%y-%m-%d")).count %></h1></div>-->
+                  <div class="title text-danger"><h1><%= @expenses.where(:expense_date => Date.today).count %></h1></div>
                   <div class="sub-title h6 text-muted">Expenses this day</div>
                 </div>
               </div>
@@ -44,7 +45,7 @@
             <div class="col-12 col-sm-6 col-xl-3 p-3">
               <div class="widget widget1 card">
                 <div class="widget-content pt-2 pb-8 d-flex flex-column align-items-center justify-content-center">
-                  <div class="title text-warning"><h1><%= @expenses.count %></h1></div>
+                  <div class="title text-warning"><h1><%= @expenses.where(:expense_date => Date.today.beginning_of_week..Date.today).count %></h1></div>
                   <div class="sub-title h6 text-muted">Expenses this week</div>
                 </div>
               </div>
@@ -61,7 +62,7 @@
               <div class="widget widget5 card">
                 <div class="widget-header px-4 row no-gutters align-items-center justify-content-between">
                   <div class="col">
-                    <span style="margin-bottom:20px;"class="h6">Weekley expenses</span>
+                    <span style="margin-bottom:20px;"class="h6">Weekly expenses</span>
                   </div>
                   <div>
                     <button type="button" class="widget5-option-change-btn btn btn-link fuse-ripple-ready" data-interval="TW">
@@ -74,7 +75,7 @@
                     <div class="col-12 col-lg-6">
                       <div id="widget5-main-chart">
                       <div class="container">
-                      <%= column_chart @expenses.group_by_day_of_week(:expense_date,format: "%a").count %>
+                      <%= column_chart @expenses.where(:expense_date => Date.today.beginning_of_week..Date.today).group_by_day_of_week(:expense_date, format: "%a").count %>
                     </div>
                     </div>
                     </div>
