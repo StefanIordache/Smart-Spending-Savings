@@ -1,5 +1,6 @@
 <%= form_for(@tag,class: "justify-content-center") do |f| %>
-    
+  <%= render 'error_messages', object: @tag %>
+
     <div class="form-group">
       <%= f.label :title %>
       <%= f.text_field :title, class: 'form-control', required: true, minlength: 1, maxlength: 500 %>

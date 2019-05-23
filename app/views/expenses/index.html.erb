@@ -38,6 +38,10 @@
                 <i class="fas fa-plus-circle"></i> <%= t('expenses.add_new_expense') %>
               <% end %>
 
+              <%= link_to expense_handle_images_get_path(@expense), {:remote => true, 'data-toggle' => "modal", 'data-target' => '#modal-window', class: "btn btn-info"} do %>
+                <i class="fas fa-file-upload"></i> <%= t('expenses.upload_images') %>
+              <% end %>
+
             </div>
 
             <% if @expenses.length > 0 %>
@@ -62,10 +66,11 @@
                     <td><%= expense.amount.to_s + ' ' + expense.currency.to_s.humanize.upcase %></td>
                     <td><%= expense.expense_date %></td>
                     <td><%= expense.description %></td>
-                    <td><% expense.tags.each do |tag| %>
-                      <span> | <%= tag.title %> | </span>
+                    <td>
+                      <% expense.tags.each do |tag| %>
+                        <span> | <%= tag.title %> | </span>
                       <% end %>
-                    </td>  
+                    </td>
                     <td class="text-center w-25">
 
                       <%= link_to edit_expense_path(expense), {:remote => true, 'data-toggle' => "modal", 'data-target' => '#modal-window', class: "btn btn-info"} do %>

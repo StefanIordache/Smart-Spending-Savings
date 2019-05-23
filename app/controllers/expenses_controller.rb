@@ -82,6 +82,19 @@ class ExpensesController < ApplicationController
 
   end
 
+  def handle_images_get
+    @button_text = "Upload"
+    @expense = Expense.new
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
+  def handle_images_post
+    abort('De aici trebuie luate pozele!')
+  end
+
   def destroy
     @expense = Expense.find(params[:id])
     @expense.destroy
@@ -94,9 +107,9 @@ class ExpensesController < ApplicationController
   private
 
     def expense_params
-      params.require(:expense).permit(:title, :description, :amount,
-                                      :expense_date, :currency)
+      params.require(:expense).permit(:title, :description, :amount, :expense_date, :currency)
     end
+
     def handle_tags_for_expense
       if params['tag_ids']
         @expense.tags.clear

@@ -1,0 +1,15 @@
+<% if @tag.errors.any? %>
+  <script>
+
+      $(function () {
+          toastr.options = {"timeOut": "5000"};
+
+          <% @tag.errors.full_messages.each do |msg| %>
+          toastr.error('<%= msg %>');
+          <% end %>
+
+          toastr.error('<%= t('errors', :count => @tag.errors.count) %>');
+      });
+
+  </script>
+<% end %>

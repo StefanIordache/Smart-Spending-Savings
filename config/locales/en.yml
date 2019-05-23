@@ -73,6 +73,7 @@ en:
     description: "Description"
     actions: "Actions"
     add_new_expense: "Add new expense"
+    upload_images: "Upload images"
     edit_expense: "Edit expense"
     view_expense: "View expense"
     your_expenses: "Your expenses"
@@ -91,3 +92,8 @@ en:
     your_reports: "Your reports"
     no_reports: "You don't have any reports on our platform!"
     expenses: "Current report's expenses"
+  tags:
+    this: "Tags"
+    your_tags: "Your tags"
+    add_new_tag: "Add new tag"
+    no_tags: "You don't have any tags on our platform!"
