@@ -1,10 +1,13 @@
 <aside id="aside" class="aside aside-left" data-fuse-bar="aside" data-fuse-bar-media-step="md" data-fuse-bar-position="left">
   <div class="aside-content bg-primary-700 text-auto">
     <div class="aside-toolbar">
-      <div class="logo">
+      
+    <%= link_to({:controller => :dashboard, :action => :index}) do %>
+    <div class="logo">
       <%= image_tag("logo.png", :alt => "rss feed") %>
-        <span class="logo-text">Smart Spending & Savings</span>
+        <span style="color:white;" class="logo-text">Smart Spending & Saving</span>
       </div>
+      <% end %>
       <button id="toggle-fold-aside-button" type="button" class="btn btn-icon d-none d-lg-block" data-fuse-aside-toggle-fold>
         <i class="icon icon-backburger"></i>
       </button>
