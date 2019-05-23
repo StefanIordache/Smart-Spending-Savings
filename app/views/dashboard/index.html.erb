@@ -402,71 +402,23 @@
                   <div class="col">
                     <span class="h6">Recently added</span>
                   </div>
-                  <div class="">
-                    <select class="h6 custom-select">
-                      <option selected="" value="ron">RON</option>
-                      <option value="usd">USD</option>
-                      <option value="eur">EUR</option>
-                      <option value="gbp">GBP</option>
-                    </select>
-                  </div>
                 </div>
                 <div class="widget-content p-4">
+                <% @expenses.each do |expense| %>
+
                   <div class="py-4 row no-gutters align-items-center justify-content-between">
                     <div class="col">
-                      <div class="h6">Carrefour</div>
+                      <div class="h6"><%= expense.title %></div>
                       <div>
-                        <span class="text-muted">12.03.2019</span>
+                        <span class="text-muted"><%= expense.expense_date %></span>
                       </div>
                     </div>
                     <div class="col-auto">
-                      <span class="text-muted">200</span>
+                      <span class="text-muted"><%= expense.amount %><%= expense.currency %></span>
                     </div>
                   </div>
-                  <div class="py-4 row no-gutters align-items-center justify-content-between">
-                    <div class="col">
-                      <div class="h6">Carrefour</div>
-                      <div>
-                        <span class="text-muted">12.03.2019</span>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <span class="text-muted">200</span>
-                    </div>
-                  </div>
-                  <div class="py-4 row no-gutters align-items-center justify-content-between">
-                    <div class="col">
-                      <div class="h6">Carrefour</div>
-                      <div>
-                        <span class="text-muted">12.03.2019</span>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <span class="text-muted">200</span>
-                    </div>
-                  </div>
-                  <div class="py-4 row no-gutters align-items-center justify-content-between">
-                    <div class="col">
-                      <div class="h6">Carrefour</div>
-                      <div>
-                        <span class="text-muted">12.03.2019</span>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <span class="text-muted">200</span>
-                    </div>
-                  </div>
-                  <div class="py-4 row no-gutters align-items-center justify-content-between">
-                    <div class="col">
-                      <div class="h6">Carrefour</div>
-                      <div>
-                        <span class="text-muted">12.03.2019</span>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <span class="text-muted">200</span>
-                    </div>
-                  </div>
+                  <% end %>
+                  
                 </div>
               </div>
             </div>
